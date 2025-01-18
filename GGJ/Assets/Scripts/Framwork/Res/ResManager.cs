@@ -8,7 +8,7 @@ using UnityEngine.Events;
 /// </summary>
 public class ResManager : BaseManager<ResManager>
 {
-    public T Laod<T>(string name) where T : Object
+    public T Load<T>(string name) where T : Object
     {
         T res = Resources.Load<T>(name);
         //如果对象是GameObject类型 实例化后 直接返回外部 可以直接使用

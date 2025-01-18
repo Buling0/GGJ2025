@@ -16,7 +16,7 @@ public class TestPool : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //PoolManager.GetInstance().GetObj("Test/Cube");
-            ResManager.GetInstance().Laod<GameObject>("Test/Cube");
+            ResManager.GetInstance().Load<GameObject>("Test/Cube");
         }
 
         if (Input.GetMouseButtonDown(1))
