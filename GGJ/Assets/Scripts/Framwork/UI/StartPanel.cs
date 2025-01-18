@@ -10,6 +10,8 @@ public class StartPanel : BasePanel
     private Button exitBtn;
     private Button creditsBtn;
     private CanvasGroup creditsPanel;  // 制作人员界面
+    private Button loadBtn;  // 新增的继续游戏按钮
+    private Button settingBtn;  // 新增的游戏设置按钮
 
     // 按钮缩放参数
     private readonly float scaleTime = 0.3f;
@@ -24,13 +26,16 @@ public class StartPanel : BasePanel
     private float contentMoveDistance = 1000f;  // 移动距离
     private float contentAnimTime = 0.5f;  // 动画时间
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         // 获取组件引用
         startBtn = transform.Find("StartBtn").GetComponent<Button>();
         exitBtn = transform.Find("ExitBtn").GetComponent<Button>();
         creditsBtn = transform.Find("CreditsBtn").GetComponent<Button>();
         creditsPanel = transform.Find("CreditsPanel").GetComponent<CanvasGroup>();
+        loadBtn = transform.Find("LoadBtn").GetComponent<Button>();  // 获取继续游戏按钮
+        settingBtn = transform.Find("SettingBtn").GetComponent<Button>();  // 获取游戏设置按钮
 
         // 初始化制作人员界面为隐藏状态
         creditsPanel.alpha = 0;
@@ -63,6 +68,16 @@ public class StartPanel : BasePanel
         UIManager.AddCustomEventListener(creditsBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(creditsBtn));
         UIManager.AddCustomEventListener(creditsBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(creditsBtn));
         creditsBtn.onClick.AddListener(OnShowCredits);
+
+        // 继续游戏按钮
+        UIManager.AddCustomEventListener(loadBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(loadBtn));
+        UIManager.AddCustomEventListener(loadBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(loadBtn));
+        loadBtn.onClick.AddListener(OnLoadGame);
+
+        // 游戏设置按钮
+        UIManager.AddCustomEventListener(settingBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(settingBtn));
+        UIManager.AddCustomEventListener(settingBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(settingBtn));
+        settingBtn.onClick.AddListener(OnGameSettings);
     }
 
     // 鼠标悬停效果
@@ -128,5 +143,25 @@ public class StartPanel : BasePanel
             creditsPanel.interactable = false;
             creditsPanel.blocksRaycasts = false;
         });
+    }
+
+    // 继续游戏
+    private void OnLoadGame()
+    {
+        Debug.Log("继续游戏");
+        // TODO: 在这里添加继续游戏的逻辑
+    }
+
+    // 游戏设置
+    private void OnGameSettings()
+    {
+        Debug.Log("游戏设置");
+        // TODO: 在这里添加游戏设置的逻辑
+    }
+
+    private void OnDestroy()
+    {
+        // 确保在场景关闭时终止所有的 DOTween 动画
+        DOTween.KillAll();
     }
 }
