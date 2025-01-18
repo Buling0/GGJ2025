@@ -18,20 +18,21 @@ public class InputManager : BaseManager<InputManager>
     
     private void InputUpdate()
     {
+        CheckKeyCodeUp(KeyCode.A);
+        CheckKeyCodeUp(KeyCode.D);
+        
         //判断是否可以进行输入检测
         if (!isStart)
         {
             return;
         }
         
-        CheckKeyCode(KeyCode.A);
-        //CheckKeyCode(KeyCode.S);
-        CheckKeyCode(KeyCode.D);
-        //CheckKeyCode(KeyCode.W);
-        CheckKeyCode(KeyCode.Space);
+        CheckKeyCodeDown(KeyCode.A);
+        CheckKeyCodeDown(KeyCode.D);
+        CheckKeyCodeDown(KeyCode.Space);
     }
     
-    private void CheckKeyCode(KeyCode key)
+    private void CheckKeyCodeDown(KeyCode key)
     {
         if (Input.GetKeyDown(key))
         {
@@ -39,7 +40,10 @@ public class InputManager : BaseManager<InputManager>
             EventManager.GetInstance().EventTrigger("Key is Down", key);
             StartOrStopCheck(false);
         }
-
+    }
+    
+    private void CheckKeyCodeUp(KeyCode key)
+    {
         if (Input.GetKeyUp(key))
         {
             //事件中心模块，分发抬起事件
