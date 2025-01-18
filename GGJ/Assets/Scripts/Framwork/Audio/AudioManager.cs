@@ -29,6 +29,11 @@ public class AudioManager : BaseManager<AudioManager>
         }
     }
     
+    
+    /// <summary>
+    /// 播放BGM
+    /// </summary>
+    /// <param name="name"></param>
     public void PalyBGM(string name)
     {
         if (bgmSource == null)
@@ -47,6 +52,11 @@ public class AudioManager : BaseManager<AudioManager>
         });
     }
 
+    
+    /// <summary>
+    /// 改变音量大小
+    /// </summary>
+    /// <param name="x"></param>
     public void ChangerbgmValue(float x)
     {
         bgmValue = x;
@@ -56,7 +66,10 @@ public class AudioManager : BaseManager<AudioManager>
         }
         bgmSource.volume = bgmValue;
     }
-
+    
+    /// <summary>
+    /// 暂停播放BGM
+    /// </summary>
     public void PauseBGM()
     {
         if (bgmSource == null)
@@ -66,6 +79,9 @@ public class AudioManager : BaseManager<AudioManager>
         bgmSource.Pause();
     }
 
+    /// <summary>
+    /// 停止播放BGM
+    /// </summary>
     public void StopBGM()
     {
         if (bgmSource == null)
@@ -75,6 +91,10 @@ public class AudioManager : BaseManager<AudioManager>
         bgmSource.Stop();
     }
 
+    /// <summary>
+    /// 播放音效
+    /// </summary>
+    /// <param name="name"></param>
     public void PlayAudio(string name, bool isLoop, UnityAction<AudioSource> callback = null)
     {
         if (AudioObj == null)
@@ -98,7 +118,11 @@ public class AudioManager : BaseManager<AudioManager>
             }
         });
     }
-    
+
+    /// <summary>
+    /// 改变所有音效的大小
+    /// </summary>
+    /// <param name="value"></param>
     public void ChangeAudioValue(float value)
     {
         audioValue = value;
@@ -107,7 +131,11 @@ public class AudioManager : BaseManager<AudioManager>
             AudioList[i].volume = audioValue;
         }
     }
-
+    
+    /// <summary>
+    /// 移除音效
+    /// </summary>
+    /// <param name="source"></param>
     public void StopAudio(AudioSource source)
     {
         if (AudioList.Contains(source))

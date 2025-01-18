@@ -9,12 +9,7 @@ public class PoolData
     public GameObject fatherObj;
     //对象的容器
     public List<GameObject> poolList;
-
-    /// <summary>
-    /// 构造函数，创建“抽屉”
-    /// </summary>
-    /// <param name="obj"></param>
-    /// <param name="poolObj"></param>
+    
     public PoolData(GameObject obj, GameObject poolObj)
     {
         //创建父物体，名称为物体的名称
@@ -27,11 +22,7 @@ public class PoolData
         
         PushObj(obj);
     }
-
-    /// <summary>
-    /// 创建对象并放入“抽屉”
-    /// </summary>
-    /// <param name="obj"></param>
+    
     public void PushObj(GameObject obj)
     {
         //失活，将对象压入缓存池
@@ -40,10 +31,6 @@ public class PoolData
         obj.transform.parent = fatherObj.transform;
     }
     
-    /// <summary>
-    /// 从缓存池中拿出对象并激活
-    /// </summary>
-    /// <returns></returns>
     public GameObject GetObj()
     {
         GameObject obj = null;
@@ -56,12 +43,6 @@ public class PoolData
     }
 }
 
-
-/// <summary>
-/// 缓存池模块
-/// Dictionary List
-/// GameObject 和 Resources 两个公共类的API
-/// </summary>
 public class PoolManager : BaseManager<PoolManager>
 {
     //缓存池容器

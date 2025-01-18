@@ -2,13 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 1.Input类
-/// 2.事件中心模块
-/// 3.公共Mono模块
-/// </summary>
-
-//思考题：如何实现改键的功能
 public class InputManager : BaseManager<InputManager>
 {
     private bool isStart = false;
@@ -32,9 +25,10 @@ public class InputManager : BaseManager<InputManager>
         }
         
         CheckKeyCode(KeyCode.A);
-        CheckKeyCode(KeyCode.S);
+        //CheckKeyCode(KeyCode.S);
         CheckKeyCode(KeyCode.D);
-        CheckKeyCode(KeyCode.W);
+        //CheckKeyCode(KeyCode.W);
+        CheckKeyCode(KeyCode.Space);
     }
     
     private void CheckKeyCode(KeyCode key)
@@ -42,13 +36,15 @@ public class InputManager : BaseManager<InputManager>
         if (Input.GetKeyDown(key))
         {
             //事件中心模块，分发按下事件
-            EventManager.GetInstance().EventTrigger("key is down", key);
+            EventManager.GetInstance().EventTrigger("Key is Down", key);
+            StartOrStopCheck(false);
         }
 
         if (Input.GetKeyUp(key))
         {
             //事件中心模块，分发抬起事件
-            EventManager.GetInstance().EventTrigger("key is up", key);
+            EventManager.GetInstance().EventTrigger("Key is Up", key);
+            StartOrStopCheck(true);
         }
     }
 }
