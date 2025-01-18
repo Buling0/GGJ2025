@@ -18,11 +18,11 @@ namespace Bubble
             {
                 be = obj.GetComponent<BubbleEntity>();
                 callback(be);
+                
                 //对泡泡预制体进行一些初始化操作
                 obj.transform.SetParent(root);
                 obj.transform.localPosition = Vector3.zero;
             });
-            Debug.Log(bt.ToString());
             //BEList.Add(be);
         }
         

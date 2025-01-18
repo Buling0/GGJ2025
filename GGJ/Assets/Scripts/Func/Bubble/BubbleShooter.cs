@@ -13,13 +13,14 @@ namespace Bubble
         [SerializeField]
         private float rotateSpeed = 1f;
         [SerializeField]
-        private float force = 1f;
+        private float force = 500f;
         
         private Vector2 _dir = Vector2.up;
-        private Vector2 _leftLimit = new Vector2(-1, 0);
-        private Vector2 _rightLimit = new Vector2(1, 0);
         private int isRotateRight = 0;
+        public float limitAngle = 80;
 
+        public Transform tran1;
+        public Transform tran2;
         private BubbleEntity _curBubbleEntity;
         private BubbleEntity _nextBubbleEntity;
         public int plusNum = 0;
@@ -27,26 +28,27 @@ namespace Bubble
         private void Awake()
         {
             //资源加载之后修改
-            ResManager.GetInstance().LoadAsync<GameObject>("Bubble/" + name, shooter =>
+            /*ResManager.GetInstance().LoadAsync<GameObject>("Bubble/" + name, shooter =>
             {
                 
-            });
+            });*/
             Register();
             InputManager.GetInstance().StartOrStopCheck(true);
         }
 
         private void Start()
         {
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), this.transform,
+            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran1,
                 obj =>
                 {
                     _curBubbleEntity = obj;
                 }); 
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), this.transform,
+            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran2,
                 obj =>
                 {
                     _nextBubbleEntity = obj;
                 });
+            Debug.Log("Start");
         }
 
         private void Register()
@@ -73,10 +75,10 @@ namespace Bubble
             switch (key)
             {
                 case KeyCode.A:
-                    isRotateRight = -1;
+                    isRotateRight = 1;
                     break;
                 case KeyCode.D:
-                    isRotateRight = 1;
+                    isRotateRight = -1;
                     break;
                 case KeyCode.Space:
                     Shooter();
@@ -102,27 +104,42 @@ namespace Bubble
 
         private void RotateDir()
         {
-            Vector2 v = _dir;
             float s = isRotateRight * rotateSpeed * Time.deltaTime;
-            v.x = _dir.x * Mathf.Cos(s) - _dir.y * Mathf.Sin(s);
-            v.y = _dir.x * Mathf.Sin(s) + _dir.y * Mathf.Cos(s);
-            _dir = v;
+            if (s >= limitAngle)
+            {
+                s = limitAngle;
+            }
+            else if(s <= -limitAngle)
+            {
+                s = -limitAngle;
+            }
+            _dir.x = Vector2.up.x * Mathf.Cos(s) - Vector2.up.y * Mathf.Sin(s);
+            _dir.y = Vector2.up.x * Mathf.Sin(s) + Vector2.up.y * Mathf.Cos(s);
         }
 
         private void Shooter()
         {
             _curBubbleEntity.AddForce(_dir, force);
-            FillNextBubble();
+            Invoke("FillNextBubble", 0.6f);
         }
 
         private void FillNextBubble()
         {
             _curBubbleEntity = _nextBubbleEntity;
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), this.transform,
+            _curBubbleEntity.transform.SetParent(tran1);
+            _curBubbleEntity.transform.localPosition = Vector3.zero;
+            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran2,
                 obj =>
                 {
                     _nextBubbleEntity = obj;
                 });
+            
+            StartCheck();
+        }
+
+        private void StartCheck()
+        {
+            InputManager.GetInstance().StartOrStopCheck(true);
         }
 
         private void UnRegister()

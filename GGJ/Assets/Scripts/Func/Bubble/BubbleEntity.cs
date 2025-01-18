@@ -38,7 +38,12 @@ namespace Bubble
 
         public int CheckTypeNum(BubbleType bubbleType)
         {
-            return Dic[bubbleType].Count;
+            if (Dic.ContainsKey(bubbleType))
+            {
+                return Dic[bubbleType].Count;
+            }
+
+            return 0;
         }
 
         public void EliminateByType(BubbleType bubbleType, out int num)
@@ -74,8 +79,12 @@ namespace Bubble
         public void Remove(BubbleEntity bubbleEntity)
         {
             BubbleType bubbleType = bubbleEntity.GetBubbleType();
+            if (!Dic.ContainsKey(bubbleType))
+            {
+                return;
+            }
             Dic[bubbleType].Remove(bubbleEntity);
-            if (Dic[bubbleType].Count == 0)
+            if (!Dic.ContainsKey(bubbleType) || Dic[bubbleType].Count == 0)
             {
                 Dic.Remove(bubbleType);
                 GCManager.GetInstance().StartGC();
@@ -136,14 +145,18 @@ namespace Bubble
         //传入发射方向单位向量，fv是力的大小
         public void AddForce(Vector2 dir, float fv)
         {
-            Debug.Log("add");
             _rigidbody2D.AddForce(dir * fv, ForceMode2D.Impulse);
         }
 
         //碰撞开始 把碰撞物体加入字典
-        private void OnCollisionEnter(Collision bubble)
+        private void OnCollisionEnter2D(Collision2D bubble)
         {
+            Debug.Log("OnCollisionEnter");
             BubbleEntity bubbleEntity = bubble.gameObject.GetComponent<BubbleEntity>();
+            if (bubbleEntity == null)
+            {
+                return;
+            }
 
             bool canBlend;
             CheckCanBlend(bubbleEntity, out canBlend);
@@ -162,7 +175,7 @@ namespace Bubble
         }
 
         //碰撞结束 把物体移除字典
-        private void OnCollisionExit(Collision bubble)
+        private void OnCollisionExit2D(Collision2D bubble)
         {
             BubbleEntity bubbleEntity = bubble.gameObject.GetComponent<BubbleEntity>();
             AdjoinBubbleDic.Remove(bubbleEntity);
@@ -239,6 +252,7 @@ namespace Bubble
         //进行颜色混合
         private void Blend(BubbleEntity bubbleEntity)
         {
+            Debug.Log("Blend");
             if (bubbleEntity != this)
             {
                 Transform p1 = bubbleEntity.gameObject.transform;
@@ -251,6 +265,7 @@ namespace Bubble
         //进行消除
         public void Eliminate(BubbleEntity bubbleEntity)
         {
+            Debug.Log("Eliminate");
             if (bubbleEntity == this)
             {
                 int num;
