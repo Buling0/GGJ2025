@@ -24,7 +24,7 @@ public class StartPanel : BasePanel
     private float contentMoveDistance = 1000f;  // 移动距离
     private float contentAnimTime = 0.5f;  // 动画时间
 
-    private void Awake()
+    protected override void Awake()
     {
         // 获取组件引用
         startBtn = transform.Find("StartBtn").GetComponent<Button>();

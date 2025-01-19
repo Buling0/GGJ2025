@@ -10,14 +10,14 @@ namespace Bubble
 {
     public class BubbleShooter : MonoBehaviour
     {
-        [SerializeField]
-        private float rotateSpeed = 1f;
-        [SerializeField]
-        private float force = 500f;
-        
+        [SerializeField] private float rotateSpeed = 2f;
+        [SerializeField] private float force = 500f;
+
         private Vector2 _dir = Vector2.up;
-        private int isRotateRight = 0;
-        public float limitAngle = 80;
+        private int _isRotateRight = 0;
+        public float limitAngle = 1;
+        public float curAngle = 0;
+        private Ray _ray;
 
         public Transform tran1;
         public Transform tran2;
@@ -30,7 +30,7 @@ namespace Bubble
             //资源加载之后修改
             /*ResManager.GetInstance().LoadAsync<GameObject>("Bubble/" + name, shooter =>
             {
-                
+
             });*/
             Register();
             InputManager.GetInstance().StartOrStopCheck(true);
@@ -38,17 +38,13 @@ namespace Bubble
 
         private void Start()
         {
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran1,
-                obj =>
-                {
-                    _curBubbleEntity = obj;
-                }); 
             BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran2,
-                obj =>
-                {
-                    _nextBubbleEntity = obj;
-                });
-            Debug.Log("Start");
+                obj => { _nextBubbleEntity = obj; });
+            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran1,
+                obj => { _curBubbleEntity = obj; });
+            _ray = new Ray();
+            _ray.origin = this.transform.position;
+            _ray.direction = _dir;
         }
 
         private void Register()
@@ -63,11 +59,13 @@ namespace Bubble
             {
                 Debug.Log("1");
             }
-            
-            if (isRotateRight != 0)
+
+            if (_isRotateRight != 0)
             {
                 RotateDir();
             }
+
+            DrawDir(_dir);
         }
 
         private void CheckDown(KeyCode key)
@@ -75,16 +73,16 @@ namespace Bubble
             switch (key)
             {
                 case KeyCode.A:
-                    isRotateRight = 1;
+                    _isRotateRight = 1;
                     break;
                 case KeyCode.D:
-                    isRotateRight = -1;
+                    _isRotateRight = -1;
                     break;
                 case KeyCode.Space:
                     Shooter();
                     break;
                 default:
-                    isRotateRight = 0;
+                    _isRotateRight = 0;
                     break;
             }
         }
@@ -95,7 +93,7 @@ namespace Bubble
             {
                 case KeyCode.A:
                 case KeyCode.D:
-                    isRotateRight = 0;
+                    _isRotateRight = 0;
                     break;
                 default:
                     break;
@@ -104,17 +102,28 @@ namespace Bubble
 
         private void RotateDir()
         {
-            float s = isRotateRight * rotateSpeed * Time.deltaTime;
-            if (s >= limitAngle)
+            curAngle = curAngle + _isRotateRight * rotateSpeed * Time.deltaTime * 0.1f;
+            if (curAngle >= curAngle + limitAngle)
             {
-                s = limitAngle;
+                curAngle = curAngle + limitAngle;
             }
-            else if(s <= -limitAngle)
+            else if (curAngle <= curAngle - limitAngle)
             {
-                s = -limitAngle;
+                curAngle = curAngle - limitAngle;
             }
-            _dir.x = Vector2.up.x * Mathf.Cos(s) - Vector2.up.y * Mathf.Sin(s);
-            _dir.y = Vector2.up.x * Mathf.Sin(s) + Vector2.up.y * Mathf.Cos(s);
+
+            Vector2 v = _dir;
+            
+            v.x = Vector2.up.x * Mathf.Cos(curAngle) - Vector2.up.y * Mathf.Sin(curAngle);
+            v.y = Vector2.up.x * Mathf.Sin(curAngle) + Vector2.up.y * Mathf.Cos(curAngle);
+
+            _dir = v;
+        }
+
+        private void DrawDir(Vector2 dir)
+        {
+            _ray.direction = dir;
+            Debug.DrawRay(_ray.origin, _ray.direction * 200, Color.green);
         }
 
         private void Shooter()
@@ -129,11 +138,8 @@ namespace Bubble
             _curBubbleEntity.transform.SetParent(tran1);
             _curBubbleEntity.transform.localPosition = Vector3.zero;
             BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran2,
-                obj =>
-                {
-                    _nextBubbleEntity = obj;
-                });
-            
+                obj => { _nextBubbleEntity = obj; });
+
             StartCheck();
         }
 
@@ -158,7 +164,8 @@ namespace Bubble
     {
         public BubbleType nextType()
         {
-            return (BubbleType)Random.Range(0, 4);
-        } 
+            //return (BubbleType)Random.Range(0, 4);
+            return 0;
+        }
     }
 }

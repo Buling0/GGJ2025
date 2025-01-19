@@ -35,9 +35,14 @@ namespace Bubble
 
         public void DestoryBubbleList(List<BubbleEntity> bubbles)
         {
-            foreach (var bubble in bubbles)
+            /*foreach (var bubble in bubbles)
             {
                 bubble.DestorySelf();
+            }*/
+            int n = bubbles.Count;
+            for (int i = n - 1; i >= 0; i--)
+            {
+                bubbles[i].DestorySelf();
             }
         }
     }

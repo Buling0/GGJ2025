@@ -21,6 +21,7 @@ namespace Bubble
     //只能用于泡泡实体类，泛用性低，可考虑泛型类
     public class BubbleDic
     {
+        private bool isBeLiminate = false;
         private Dictionary<BubbleType, List<BubbleEntity>> Dic = new Dictionary<BubbleType, List<BubbleEntity>>();
 
         public void Add(BubbleEntity bubbleEntity)
@@ -60,9 +61,9 @@ namespace Bubble
 
         public List<BubbleEntity> BeEliminate(BubbleType bubbleType)
         {
-            if (Dic[bubbleType].Count <= 1)
+            if (Dic[bubbleType].Count <= 1 || isBeLiminate)
             {
-                return null;
+                return Dic[bubbleType];
             }
             else
             {
@@ -71,6 +72,8 @@ namespace Bubble
                 {
                     list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
                 }
+
+                isBeLiminate = true;
 
                 return list;
             }
@@ -178,6 +181,10 @@ namespace Bubble
         private void OnCollisionExit2D(Collision2D bubble)
         {
             BubbleEntity bubbleEntity = bubble.gameObject.GetComponent<BubbleEntity>();
+            if (bubbleEntity == null)
+            {
+                return;
+            }
             AdjoinBubbleDic.Remove(bubbleEntity);
         }
 
@@ -268,8 +275,10 @@ namespace Bubble
             Debug.Log("Eliminate");
             if (bubbleEntity == this)
             {
+                Debug.Log("我触发了消除");
                 int num;
                 AdjoinBubbleDic.EliminateByType(bubbleEntity.GetBubbleType(), out num);
+                Debug.Log("消除了" + num + "个");
                 ScoreManager.GetInstance().PlusScore(bubbleEntity.GetBubbleType(), num);
             }
         }
