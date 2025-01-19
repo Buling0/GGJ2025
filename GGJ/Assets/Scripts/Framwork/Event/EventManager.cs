@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-/// <summary>
-/// 
-/// </summary>
 public interface IEventInfo
 {
     
 }
 
-/// <summary>
-/// 
-/// </summary>
-/// <typeparam name="T"></typeparam>
 public class EventInfo<T> : IEventInfo
 {
     public UnityAction<T> actions;
@@ -25,9 +18,6 @@ public class EventInfo<T> : IEventInfo
     }
 }
 
-/// <summary>
-/// 
-/// </summary>
 public class EventInfo : IEventInfo
 {
     public UnityAction actions;
@@ -38,24 +28,9 @@ public class EventInfo : IEventInfo
     }
 }
 
-
-/// <summary>
-/// 事件中心
-/// 单例模式设计对象
-/// Dictionary, 委托，观察者设计模式
-/// 泛型
-/// </summary>
 public class EventManager : BaseManager<EventManager>
 {
-    //key —— 事件的名称
-    //value —— 监听事件对应的函数
-    //数组也可以用object表示，可以传入多个参数
     private Dictionary<string, IEventInfo> eventDic = new Dictionary<string, IEventInfo>();
-
-    public void test()
-    {
-        
-    }
     
     public void AddEventListener<T>(string name, UnityAction<T> action)
     {

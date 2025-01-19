@@ -31,7 +31,7 @@ public class UIManager : BaseManager<UIManager>
     public UIManager()
     {
         //创建Canvas 并在过场时不会被销毁
-        GameObject obj = ResManager.GetInstance().Laod<GameObject>("UIPrefabs/Canvas");
+        GameObject obj = ResManager.GetInstance().Load<GameObject>("UIPrefabs/Canvas");
         //里氏转换原则
         canvas = obj.transform as RectTransform;
         GameObject.DontDestroyOnLoad(obj);
@@ -42,7 +42,7 @@ public class UIManager : BaseManager<UIManager>
         system = canvas.Find("System");
         
         //创建EventSystem 并在过场时不会被销毁
-        obj = ResManager.GetInstance().Laod<GameObject>("UIPrefabs/EventSystem");
+        obj = ResManager.GetInstance().Load<GameObject>("UIPrefabs/EventSystem");
         GameObject.DontDestroyOnLoad(obj);
     }
     
