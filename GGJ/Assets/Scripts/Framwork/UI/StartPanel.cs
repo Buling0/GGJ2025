@@ -148,7 +148,7 @@ public class StartPanel : BasePanel
     // 继续游戏
     private void OnLoadGame()
     {
-        Debug.Log("继续游戏");
+        Debug.Log("操作说明");
         // TODO: 在这里添加继续游戏的逻辑
     }
 

@@ -1533,6 +1533,7 @@ MonoBehaviour:
   tran2: {fileID: 1631452528}
   plusNum: 0
   bubbleRod: {fileID: 0}
+  shooterRoot: {fileID: 0}
 --- !u!61 &1466809487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2496,6 +2497,7 @@ MonoBehaviour:
   tran2: {fileID: 0}
   plusNum: 0
   bubbleRod: {fileID: 1884543535}
+  shooterRoot: {fileID: 0}
 --- !u!1 &1896814125
 GameObject:
   m_ObjectHideFlags: 0

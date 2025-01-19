@@ -20,8 +20,8 @@ public class LevelUIManager : MonoBehaviour
     private GameManager gameManager; // 引用GameManager以便更新分数和切换场景
 
     // 各个场景的目标分数，StartTest和EndTest的目标分数为0
-    private int[] levelTargetScores = { 0, 10, 0, 20, 0, 30, 0, 40, 0, 50, 0 };
-    private string[] sceneNames = { "StartTest", "Scene1Test", "LevelOk 1", "Scene2Test", "LevelOk 2", "Scene3Test", "LevelOk 3", "Scene4Test", "LevelOk 4", "Scene5Test", "EndTest" };
+    private int[] levelTargetScores = { 0, 10, 20, 30, 40, 50, 0 };
+    private string[] sceneNames = { "StartTest", "Scene1Test", "Scene2Test", "Scene3Test", "Scene4Test", "Scene5Test", "EndTest" };
     private int currentSceneIndex = 0;
 
     void Start()
@@ -101,25 +101,19 @@ public class LevelUIManager : MonoBehaviour
                 SetTargetScore(levelTargetScores[1]);
                 break;
             case "Scene2Test":
-                SetTargetScore(levelTargetScores[3]);
+                SetTargetScore(levelTargetScores[2]);
                 break;
             case "Scene3Test":
-                SetTargetScore(levelTargetScores[5]);
+                SetTargetScore(levelTargetScores[3]);
                 break;
             case "Scene4Test":
-                SetTargetScore(levelTargetScores[7]);
+                SetTargetScore(levelTargetScores[4]);
                 break;
             case "Scene5Test":
-                SetTargetScore(levelTargetScores[9]);
-                break;
-            case "LevelOk 1":
-            case "LevelOk 2":
-            case "LevelOk 3":
-            case "LevelOk 4":
-                SetTargetScore(0); // LevelOK 场景不需要目标分数
+                SetTargetScore(levelTargetScores[5]);
                 break;
             case "EndTest":
-                SetTargetScore(levelTargetScores[10]);
+                SetTargetScore(levelTargetScores[6]);
                 break;
             default:
                 Debug.LogWarning("未识别的场景名称，无法设置目标分数");

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene1Test.unity
     guid: 51b4ef6441a2b3241bcebea79674462f
   - enabled: 1
-    path: Assets/Scenes/LevelOK 1.unity
+    path: Assets/Scenes/LevelOK.unity
     guid: 1ea0d5d364e2ff347a2d81b1cdcbacc4
   - enabled: 1
     path: Assets/Scenes/Scene2Test.unity

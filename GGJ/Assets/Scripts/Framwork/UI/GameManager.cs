@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // 关卡目标分数数组，StartTest和EndTest的目标分数设置为0
-    private int[] levelTargetScores = { 0, 10, 0, 20, 0, 30, 0, 40, 0, 50, 0 };
-    private string[] sceneNames = { "StartTest", "Scene1Test", "LevelOk 1", "Scene2Test", "LevelOk 2", "Scene3Test", "LevelOk 3", "Scene4Test", "LevelOk 4", "Scene5Test", "EndTest" };
+    private int[] levelTargetScores = { 0, 10, 20, 30, 40, 50, 0 };
+    private string[] sceneNames = { "StartTest", "Scene1Test", "Scene2Test", "Scene3Test", "Scene4Test", "Scene5Test", "EndTest" };
     private int currentSceneIndex = 0;
     private int currentScore = 0;
 
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private int GetTargetScoreForCurrentScene()
     {
         // 计算当前关卡的目标分数索引
-        int targetScoreIndex = (currentSceneIndex - 1) / 2;
+        int targetScoreIndex = (currentSceneIndex - 1);
         if (targetScoreIndex >= 0 && targetScoreIndex < levelTargetScores.Length)
         {
             return levelTargetScores[targetScoreIndex];
