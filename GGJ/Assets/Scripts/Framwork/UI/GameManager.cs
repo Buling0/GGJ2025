@@ -9,13 +9,6 @@ public class GameManager : MonoBehaviour
     private int currentSceneIndex = 0;
     private int currentScore = 0;
 
-    private SceneTransitionManager sceneTransitionManager;
-
-    private void Start()
-    {
-        sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
-    }
-
     public void StartGame()
     {
         Debug.Log("StartGame called");

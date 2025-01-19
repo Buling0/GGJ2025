@@ -370,7 +370,9 @@
 "Assets/Scripts/Framwork/UI/GameManager.cs"
 "Assets/Scripts/Framwork/UI/LevelUIManager.cs"
 "Assets/Scripts/Framwork/UI/LoginPanel.cs"
+"Assets/Scripts/Framwork/UI/MusicManager.cs"
 "Assets/Scripts/Framwork/UI/SceneTransitionManager.cs"
+"Assets/Scripts/Framwork/UI/SoundEffectsManager.cs"
 "Assets/Scripts/Framwork/UI/StartPanel.cs"
 "Assets/Scripts/Framwork/UI/UIManager.cs"
 -langversion:9.0
