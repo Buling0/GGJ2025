@@ -47,30 +47,82 @@ namespace Bubble
             return 0;
         }
 
+        public void Refresh(BubbleType bubbleType)
+        {
+            if (Dic.ContainsKey(bubbleType))
+            {
+                List<BubbleEntity> list = Dic[bubbleType];
+                Dic.Remove(bubbleType);
+                foreach (BubbleEntity bubble in list)
+                {
+                    if (bubble != null)
+                    {
+                        this.Add(bubble);
+                    }
+                }
+            }
+        }
+
         public void EliminateByType(BubbleType bubbleType, out int num)
         {
-            List<BubbleEntity> list = Dic[bubbleType];
-            foreach (var be in Dic[bubbleType])
+            if (!Dic.ContainsKey(bubbleType))
             {
-                list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
+                num = 0;
+                return;
             }
+
+            List<BubbleEntity> list = Dic[bubbleType];
+            int i = Dic[bubbleType].Count - 1;
+            for (; i >= 0; i--)
+            {
+                var be = list[i];
+                be.isDestorying = true;
+                IEnumerable<BubbleEntity> l = list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
+                foreach (var bubble in l)
+                {
+                    if (!list.Contains(bubble))
+                    {
+                        list.Add(bubble);
+                    }
+                }
+            }
+
             num = list.Count;
-            
+
+            ScoreManager.GetInstance().PlusScore(bubbleType, num);
             BubbleManager.GetInstance().DestoryBubbleList(list);
         }
 
         public List<BubbleEntity> BeEliminate(BubbleType bubbleType)
         {
-            if (Dic[bubbleType].Count <= 1 || isBeLiminate)
+            if (!Dic.ContainsKey(bubbleType))
+            {
+                isBeLiminate = true;
+                return null;
+            }
+            else if (Dic[bubbleType].Count <= 1 || isBeLiminate)
             {
                 return Dic[bubbleType];
             }
             else
             {
                 List<BubbleEntity> list = Dic[bubbleType];
-                foreach (var be in Dic[bubbleType])
+                int i = Dic[bubbleType].Count - 1;
+                for (; i >= 0; i--)
                 {
-                    list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
+                    var be = list[i];
+                    if (!be.isDestorying)
+                    {
+                        be.isDestorying = true;
+                        IEnumerable<BubbleEntity> l = list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
+                        foreach (var bubble in l)
+                        {
+                            if (!list.Contains(bubble))
+                            {
+                                list.Add(bubble);
+                            }
+                        }
+                    }
                 }
 
                 isBeLiminate = true;
@@ -86,6 +138,7 @@ namespace Bubble
             {
                 return;
             }
+
             Dic[bubbleType].Remove(bubbleEntity);
             if (!Dic.ContainsKey(bubbleType) || Dic[bubbleType].Count == 0)
             {
@@ -105,27 +158,21 @@ namespace Bubble
         {
             Dic.Clear();
         }
+
+        ~BubbleDic()
+        {
+            Dic.Clear();
+        }
     }
 
 
     public class BubbleEntity : MonoBehaviour
     {
-        [SerializeField]
-        private BubbleType _bubbleType;
+        [SerializeField] private BubbleType _bubbleType;
         private Rigidbody2D _rigidbody2D;
         private Image _image;
         public BubbleDic AdjoinBubbleDic = new BubbleDic();
-
-        /*public BubbleEntity(BubbleType bt)
-        {
-            _bubbleType = bt;
-        }
-
-        //合成时创建，需要给出创建的位置
-        public BubbleEntity(BubbleType bt, RectTransform root)
-        {
-            _bubbleType = bt;
-        }*/
+        public bool isDestorying = false;
 
         private void Awake()
         {
@@ -136,7 +183,9 @@ namespace Bubble
         private void Register()
         {
             EventManager.GetInstance().AddEventListener<BubbleEntity>("Blend", Blend);
+            EventManager.GetInstance().AddEventListener<BubbleType>("BlendDone", BlendOrEliminateDone);
             EventManager.GetInstance().AddEventListener<BubbleEntity>("Eliminate", Eliminate);
+            EventManager.GetInstance().AddEventListener<BubbleType>("EliminateDone", BlendOrEliminateDone);
         }
 
         public BubbleType GetBubbleType()
@@ -154,7 +203,11 @@ namespace Bubble
         //碰撞开始 把碰撞物体加入字典
         private void OnCollisionEnter2D(Collision2D bubble)
         {
-            Debug.Log("OnCollisionEnter");
+            if (bubble == null)
+            {
+                return;
+            }
+
             BubbleEntity bubbleEntity = bubble.gameObject.GetComponent<BubbleEntity>();
             if (bubbleEntity == null)
             {
@@ -180,11 +233,17 @@ namespace Bubble
         //碰撞结束 把物体移除字典
         private void OnCollisionExit2D(Collision2D bubble)
         {
+            if (bubble == null)
+            {
+                return;
+            }
+
             BubbleEntity bubbleEntity = bubble.gameObject.GetComponent<BubbleEntity>();
             if (bubbleEntity == null)
             {
                 return;
             }
+
             AdjoinBubbleDic.Remove(bubbleEntity);
         }
 
@@ -213,6 +272,7 @@ namespace Bubble
                         canBlend = true;
                         _bubbleType = BubbleType.Green;
                     }
+
                     break;
                 case BubbleType.Red:
                     if (bt == BubbleType.Blue)
@@ -225,6 +285,7 @@ namespace Bubble
                         canBlend = true;
                         _bubbleType = BubbleType.Orange;
                     }
+
                     break;
                 case BubbleType.Yellow:
                     if (bt == BubbleType.Red)
@@ -237,6 +298,7 @@ namespace Bubble
                         canBlend = true;
                         _bubbleType = BubbleType.Green;
                     }
+
                     break;
                 default:
                     canBlend = false;
@@ -253,6 +315,7 @@ namespace Bubble
             {
                 return true;
             }
+
             return false;
         }
 
@@ -272,32 +335,42 @@ namespace Bubble
         //进行消除
         public void Eliminate(BubbleEntity bubbleEntity)
         {
-            Debug.Log("Eliminate");
-            if (bubbleEntity == this)
+            if (bubbleEntity == this && !isDestorying)
             {
-                Debug.Log("我触发了消除");
+                isDestorying = true;
                 int num;
+                //AdjoinBubbleDic.Add(this);
                 AdjoinBubbleDic.EliminateByType(bubbleEntity.GetBubbleType(), out num);
                 Debug.Log("消除了" + num + "个");
-                ScoreManager.GetInstance().PlusScore(bubbleEntity.GetBubbleType(), num);
+                if (num == 0)
+                {
+                    isDestorying = false;
+                    return;
+                }
+
+                DestorySelf();
             }
+        }
+
+        private void BlendOrEliminateDone(BubbleType bubbleType)
+        {
+            AdjoinBubbleDic.Refresh(bubbleType);
         }
 
         private void UnRegister()
         {
             EventManager.GetInstance().RemoveEventListener<BubbleEntity>("Blend", Blend);
+            EventManager.GetInstance().RemoveEventListener<BubbleType>("BlendDone", BlendOrEliminateDone);
             EventManager.GetInstance().RemoveEventListener<BubbleEntity>("Eliminate", Eliminate);
+            EventManager.GetInstance().RemoveEventListener<BubbleType>("EliminateDone", BlendOrEliminateDone);
         }
 
         public void DestorySelf()
         {
-            Destroy(this);
-        }
-
-        private void OnDestroy()
-        {
+            Debug.Log("销毁自己");
             AdjoinBubbleDic.Clear();
             UnRegister();
+            Destroy(this.gameObject);
         }
     }
 }

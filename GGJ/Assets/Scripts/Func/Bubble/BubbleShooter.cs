@@ -54,12 +54,7 @@ namespace Bubble
         }
 
         private void Update()
-        {
-            if (_curBubbleEntity == null)
-            {
-                Debug.Log("1");
-            }
-
+        { 
             if (_isRotateRight != 0)
             {
                 RotateDir();
@@ -164,8 +159,7 @@ namespace Bubble
     {
         public BubbleType nextType()
         {
-            //return (BubbleType)Random.Range(0, 4);
-            return 0;
+            return (BubbleType)Random.Range(0, 4);
         }
     }
 }
