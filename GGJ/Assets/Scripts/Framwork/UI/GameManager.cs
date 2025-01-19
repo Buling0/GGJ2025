@@ -79,4 +79,22 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Loading Scene: {sceneName} (Index: {currentSceneIndex})");
         SceneManager.LoadScene(sceneName);
     }
+
+    private void Update()
+    {
+        // 检测按下 Esc 键
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitGame();
+        }
+    }
+
+    private void ExitGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
 }
