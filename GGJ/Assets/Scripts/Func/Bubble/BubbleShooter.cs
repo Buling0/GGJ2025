@@ -121,8 +121,8 @@ namespace Bubble
         }
 
         private void Rotate()
-        {
-            //this.transform.rotation = new Vector3(_dir.x, _dir.y, 0);
+        { 
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, curAngle * 57);
         }
 
         private void DrawDir(Vector2 dir)
