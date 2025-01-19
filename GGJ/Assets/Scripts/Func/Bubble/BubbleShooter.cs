@@ -63,6 +63,11 @@ namespace Bubble
             DrawDir(_dir);
         }
 
+        private void LateUpdate()
+        {
+            Rotate();
+        }
+
         private void CheckDown(KeyCode key)
         {
             switch (key)
@@ -113,6 +118,11 @@ namespace Bubble
             v.y = Vector2.up.x * Mathf.Sin(curAngle) + Vector2.up.y * Mathf.Cos(curAngle);
 
             _dir = v;
+        }
+
+        private void Rotate()
+        {
+            //this.transform.rotation = new Vector3(_dir.x, _dir.y, 0);
         }
 
         private void DrawDir(Vector2 dir)
