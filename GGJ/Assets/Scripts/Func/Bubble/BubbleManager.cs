@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,14 +24,35 @@ namespace Bubble
                 obj.transform.SetParent(root);
                 obj.transform.localPosition = Vector3.zero;
             });
-            //BEList.Add(be);
         }
         
-        public BubbleEntity CreateBubbleByBlend(BubbleType bt, Position root)
+        public void  CreateBubbleByBlend(BubbleType bt, Transform root, Vector3 v)
         {
-            //BubbleEntity be = new BubbleEntity(bt, root);
-            //BEList.Add(be);
-            return null;
+            BubbleEntity be = null;
+            
+            ResManager.GetInstance().LoadAsync<GameObject>("BubblePrefabs/" + bt.ToString(), (obj) =>
+            {
+                be = obj.GetComponent<BubbleEntity>();
+                
+                obj.transform.SetParent(root);
+                obj.transform.position = v;
+            });
+
+            switch (bt)
+            {
+                case BubbleType.Green:
+                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Blue);
+                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Yellow);
+                    break;
+                case BubbleType.Orange:
+                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Red);
+                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Yellow);
+                    break;
+                case BubbleType.Purple:
+                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Blue);
+                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Red);
+                    break;
+            }
         }
 
         public void DestoryBubbleList(List<BubbleEntity> bubbles)

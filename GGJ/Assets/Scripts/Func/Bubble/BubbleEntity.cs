@@ -173,6 +173,7 @@ namespace Bubble
         private Image _image;
         public BubbleDic AdjoinBubbleDic = new BubbleDic();
         public bool isDestorying = false;
+        public bool isBlending = false;
 
         private void Awake()
         {
@@ -216,8 +217,11 @@ namespace Bubble
 
             bool canBlend;
             CheckCanBlend(bubbleEntity, out canBlend);
-            if (canBlend)
+            if (canBlend && !isBlending)
             {
+                Debug.Log("blend");
+                isBlending = true;
+                bubbleEntity.isBlending = true;
                 EventManager.GetInstance().EventTrigger<BubbleEntity>("Blend", bubbleEntity);
                 return;
             }
@@ -250,10 +254,10 @@ namespace Bubble
         //颜色合成检测
         private void CheckCanBlend(BubbleEntity bubbleEntity, out bool canBlend)
         {
+            canBlend = false;
             BubbleType bt = bubbleEntity.GetBubbleType();
             if (_bubbleType == BubbleType.White || bt == _bubbleType || bt == BubbleType.White)
             {
-                canBlend = false;
                 return;
             }
 
@@ -304,8 +308,6 @@ namespace Bubble
                     canBlend = false;
                     return;
             }
-
-            canBlend = false;
         }
 
         //消除检测
@@ -322,13 +324,17 @@ namespace Bubble
         //进行颜色混合
         private void Blend(BubbleEntity bubbleEntity)
         {
-            Debug.Log("Blend");
-            if (bubbleEntity != this)
+            if (bubbleEntity != this && isBlending)
             {
-                Transform p1 = bubbleEntity.gameObject.transform;
-                Transform p2 = this.gameObject.transform;
-                /*BubbleManager.GetInstance()
-                    .CreateBubbleByBlend(bubbleEntity.GetBubbleType(), (p1.position + p2.position) / 2);*/
+                if (_bubbleType == BubbleType.Green || _bubbleType == BubbleType.Purple ||
+                    _bubbleType == BubbleType.Orange)
+                {
+                    Debug.Log("Blend");
+                    Transform p1 = bubbleEntity.gameObject.transform;
+                    Transform p2 = this.gameObject.transform;
+                    Vector3 posi = (p1.position + p2.position) / 2;
+                    BubbleManager.GetInstance().CreateBubbleByBlend(_bubbleType, p1.parent, posi);
+                }
             }
         }
 
@@ -355,6 +361,10 @@ namespace Bubble
         private void BlendOrEliminateDone(BubbleType bubbleType)
         {
             AdjoinBubbleDic.Refresh(bubbleType);
+            if (isBlending)
+            {
+                DestorySelf();
+            }
         }
 
         private void UnRegister()
@@ -367,7 +377,7 @@ namespace Bubble
 
         public void DestorySelf()
         {
-            Debug.Log("销毁自己");
+            gameObject.SetActive(false);
             AdjoinBubbleDic.Clear();
             UnRegister();
             Destroy(this.gameObject);

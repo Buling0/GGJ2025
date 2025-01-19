@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bf4216c403148bf4d999e54823b68c74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2de1f4685f13edd449daf96c6c519fe5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -92,6 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bubbleType: 0
+  isDestorying: 0
+  isBlending: 0
 --- !u!58 &8728184517417824489
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -107,7 +109,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 45
+  m_Radius: 50
 --- !u!50 &8728184517417824488
 Rigidbody2D:
   serializedVersion: 4

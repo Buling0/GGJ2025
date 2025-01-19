@@ -94,7 +94,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 45
+  m_Radius: 50
 --- !u!50 &4220500279554588369
 Rigidbody2D:
   serializedVersion: 4
@@ -129,3 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bubbleType: 2
+  isDestorying: 0
+  isBlending: 0
