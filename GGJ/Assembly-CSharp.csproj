@@ -63,10 +63,12 @@
     <Compile Include="Assets\Scripts\Framwork\InputManager\InputManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\Base\SingletonMono.cs" />
     <Compile Include="Assets\Scripts\Framwork\Base\SingletonAutoMono.cs" />
+    <Compile Include="Assets\Scripts\Framwork\UI\GameManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\Scene\ScenesManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\UI\LoginPanel.cs" />
     <Compile Include="Assets\Scripts\Framwork\CachePool\PoolManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\Res\ResManager.cs" />
+    <Compile Include="Assets\Scripts\Framwork\UI\LevelUIManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\CachePool\TestPool.cs" />
     <Compile Include="Assets\Scripts\Framwork\Mono\MonoController.cs" />
     <Compile Include="Assets\Scripts\Framwork\UI\BasePanel.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\Scripts\Framwork\Event\EventManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\Audio\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\Mono\MonoManager.cs" />
+    <Compile Include="Assets\Scripts\Framwork\UI\SceneTransitionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
