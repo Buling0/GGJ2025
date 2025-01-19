@@ -369,6 +369,7 @@
 "Assets/Scripts/Framwork/Scene/ScenesManager.cs"
 "Assets/Scripts/Framwork/UI/BasePanel.cs"
 "Assets/Scripts/Framwork/UI/GameManager.cs"
+"Assets/Scripts/Framwork/UI/LevelOkManager.cs"
 "Assets/Scripts/Framwork/UI/LevelUIManager.cs"
 "Assets/Scripts/Framwork/UI/LoginPanel.cs"
 "Assets/Scripts/Framwork/UI/MusicManager.cs"

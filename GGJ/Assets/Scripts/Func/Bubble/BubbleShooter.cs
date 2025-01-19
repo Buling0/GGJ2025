@@ -25,6 +25,9 @@ namespace Bubble
         private BubbleEntity _nextBubbleEntity;
         public int plusNum = 0;
 
+        public Transform bubbleRod; // 泡泡杆的Transform引用
+        public Transform shooterRoot; // ShooterRoot的Transform引用
+
         private void Awake()
         {
             //资源加载之后修改
@@ -118,6 +121,19 @@ namespace Bubble
             v.y = Vector2.up.x * Mathf.Sin(curAngle) + Vector2.up.y * Mathf.Cos(curAngle);
 
             _dir = v;
+
+            // 更新泡泡杆的旋转，使其与射线平行并加上90°的旋转差距
+            float angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
+            bubbleRod.rotation = Quaternion.Euler(0, 0, angle + 90f);
+
+            // 确保泡泡杆的位置与射线的起点一致
+            bubbleRod.position = _ray.origin;
+
+            // 更新ShooterRoot的位置
+            if (shooterRoot != null)
+            {
+                shooterRoot.position = _ray.origin;
+            }
         }
 
         private void Rotate()
