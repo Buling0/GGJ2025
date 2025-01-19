@@ -115,7 +115,7 @@ public class LevelUIManager : MonoBehaviour
     public void SetTargetScore(int score)
     {
         targetScore = score;
-        targetScoreLabelText.text = "关卡目标分数";
+        targetScoreLabelText.text = "目标分数";
         targetScoreValueText.text = targetScore.ToString();
     }
 

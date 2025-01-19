@@ -129,6 +129,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 327544446}
     m_Modifications:
+    - target: {fileID: 5759678374548759307, guid: 8ba622d85c23f18419c9a25c7fe92808, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 81817a30ce7fa9e49a35f66c5ea8058e, type: 3}
+    - target: {fileID: 5759678374909456919, guid: 8ba622d85c23f18419c9a25c7fe92808, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 81817a30ce7fa9e49a35f66c5ea8058e, type: 3}
     - target: {fileID: 5759678375769688090, guid: 8ba622d85c23f18419c9a25c7fe92808, type: 3}
       propertyPath: m_Name
       value: LevelUIPanel
