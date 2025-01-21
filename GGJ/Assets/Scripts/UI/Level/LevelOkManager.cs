@@ -20,14 +20,13 @@ public class LevelOkManager : MonoBehaviour
     public void OnOkButtonClicked()
     {
         Debug.Log("OK Button clicked.");
-        GameManager gameManager = FindObjectOfType<GameManager>();
-        if (gameManager != null)
+        if (GameManager.Instance != null)
         {
-            gameManager.LoadNextLevel();
+            GameManager.Instance.LoadNextLevel();
         }
         else
         {
-            Debug.LogError("GameManager not found in the scene.");
+            Debug.LogError("GameManager instance not found.");
         }
     }
 } 

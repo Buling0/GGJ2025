@@ -20,13 +20,25 @@ public class LevelUIManager : MonoBehaviour
     private GameManager gameManager; // 引用GameManager以便更新分数和切换场景
 
     // 各个场景的目标分数，StartTest和EndTest的目标分数为0
-    private int[] levelTargetScores = { 0, 10, 20, 30, 40, 50, 0 };
-    private string[] sceneNames = { "Start", "Level1", "Level2", "Level3", "Level4", "Level5", "End" };
+        private int[] levelTargetScores = { 0, 10, 10, 20, 20, 30, 30, 40, 40, 50, 0 };
+    private string[] sceneNames = { 
+        "Start", 
+        "Level1",
+        "LevelWin", 
+        "Level2",
+        "LevelWin",  
+        "Level3", 
+        "LevelWin", 
+        "Level4", 
+        "LevelWin", 
+        "Level5", 
+        "End" 
+        };
     private int currentSceneIndex = 0;
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>(); // 获取GameManager的引用
+        gameManager = GameManager.Instance; // 使用单例访问
         InitializeCurrentSceneIndex(); // 初始化当前场景索引
 
         SetTargetScoreBasedOnScene(); // 根据当前场景设置目标分数
@@ -81,9 +93,7 @@ public class LevelUIManager : MonoBehaviour
     // 加载下一个场景
     private void LoadNextScene()
     {
-        currentSceneIndex = (currentSceneIndex + 1) % sceneNames.Length; // 增加场景索引
-        Debug.Log("Loading Scene: " + sceneNames[currentSceneIndex]); // 输出调试信息
-        SceneManager.LoadScene(sceneNames[currentSceneIndex]); // 加载下一个场景
+        GameManager.Instance.LoadNextLevel();
     }
 
     // 根据当前场景设置目标分数
@@ -101,19 +111,22 @@ public class LevelUIManager : MonoBehaviour
                 SetTargetScore(levelTargetScores[1]);
                 break;
             case "Level2":
-                SetTargetScore(levelTargetScores[2]);
-                break;
-            case "Level3":
                 SetTargetScore(levelTargetScores[3]);
                 break;
-            case "Level4":
-                SetTargetScore(levelTargetScores[4]);
-                break;
-            case "Level5":
+            case "Level3":
                 SetTargetScore(levelTargetScores[5]);
                 break;
+            case "Level4":
+                SetTargetScore(levelTargetScores[7]);
+                break;
+            case "Level5":
+                SetTargetScore(levelTargetScores[9]);
+                break;
+            case "LevelWin":
+                SetTargetScore(levelTargetScores[2]);
+                break;
             case "End":
-                SetTargetScore(levelTargetScores[6]);
+                SetTargetScore(levelTargetScores[10]);
                 break;
             default:
                 Debug.LogWarning("未识别的场景名称，无法设置目标分数");
@@ -161,17 +174,33 @@ public class LevelUIManager : MonoBehaviour
 
     private void Register()
     {
-        EventManager.GetInstance().AddEventListener<int>("ScoreChange", RefreshScore);
+        if (EventManager.GetInstance() != null)
+        {
+            EventManager.GetInstance().AddEventListener<int>("ScoreChange", RefreshScore);
+        }
     }
 
     private void UnRegister()
     {
-        EventManager.GetInstance().RemoveEventListener<int>("ScoreChange", RefreshScore);
+        if (EventManager.GetInstance() != null)
+        {
+            EventManager.GetInstance().RemoveEventListener<int>("ScoreChange", RefreshScore);
+        }
+    }
+
+    private void OnEnable()
+    {
+        Register();
+    }
+
+    private void OnDisable()
+    {
+        UnRegister();
     }
 
     private void OnDestroy()
     {
-        UnRegister(); // 注销事件监听器
+        UnRegister();
     }
 
     private void RefreshScore(int score)

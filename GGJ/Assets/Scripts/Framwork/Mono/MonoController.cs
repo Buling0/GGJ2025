@@ -11,12 +11,19 @@ using UnityEngine.Events;
 /// </summary>
 public class MonoController : MonoBehaviour
 {
-    public event UnityAction updateEvent;
+    private event UnityAction updateEvent;
     
+    private void Awake()
+    {
+        // 确保在场景切换时不被销毁
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        // 移除这行，因为在 Awake 中已经调用了
+        // DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -41,8 +48,14 @@ public class MonoController : MonoBehaviour
     /// 给外部用于移除帧更新的函数
     /// </summary>
     /// <param name="fun"></param>
-    public void RemoveUpdateLisener(UnityAction fun)
+    public void RemoveUpdateListener(UnityAction fun)
     {
         updateEvent -= fun;
+    }
+
+    // 添加清理所有更新事件的方法
+    public void ClearAllUpdateListeners()
+    {
+        updateEvent = null;
     }
 }

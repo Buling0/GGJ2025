@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using System.Collections;
 
 public class StartPanel : BasePanel
 {
@@ -140,25 +141,39 @@ public class StartPanel : BasePanel
     // 开始游戏
     private void OnStartGame()
     {
-        // TODO: 在这里添加加载存档和开始游戏的逻辑
-        Debug.Log("开始游戏");
-        // 示例：加载游戏场景
-        // SceneManager.LoadScene("GameScene");
+        Debug.Log("Start button clicked");
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.StartGame();
+        }
+        else
+        {
+            Debug.LogError("GameManager instance not found!");
+        }
     }
 
     // 退出游戏
-    private void OnExitGame()
+    public void OnExitGame()
     {
-        #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            Application.Quit();
-        #endif
+        Debug.Log("Exit button clicked");
+        SafeExit();
     }
 
     // 显示制作人员界面
     private void OnShowCredits()
     {
+        // 添加空引用检查
+        if (creditsPanel == null)
+        {
+            Debug.LogError("Credits Panel is not assigned!");
+            return;
+        }
+        if (creditsContent == null)
+        {
+            Debug.LogError("Credits Content is not assigned!");
+            return;
+        }
+
         // 面板淡入
         creditsPanel.DOFade(1, 0.3f);
         creditsPanel.interactable = true;
@@ -171,6 +186,11 @@ public class StartPanel : BasePanel
         if (closeBtn1 == null)
         {
             closeBtn1 = creditsPanel.transform.Find("CloseBtn1").GetComponent<Button>();
+            if (closeBtn1 == null)
+            {
+                Debug.LogError("Could not find CloseBtn1!");
+                return;
+            }
             closeBtn1.onClick.RemoveAllListeners();
             closeBtn1.onClick.AddListener(OnCloseCredits);
         }
@@ -269,10 +289,74 @@ public class StartPanel : BasePanel
         Debug.Log($"Volume changed to: {value}");
     }
 
+    // 添加事件注册方法
+    private void Register()
+    {
+        // 如果有需要注册的事件，在这里添加
+        if (EventManager.GetInstance() != null)
+        {
+            // 例如：
+            // EventManager.GetInstance().AddEventListener<int>("SomeEvent", OnSomeEvent);
+        }
+    }
+
+    // 添加事件注销方法
+    private void UnRegister()
+    {
+        // 如果有需要注销的事件，在这里添加
+        if (EventManager.GetInstance() != null)
+        {
+            // 例如：
+            // EventManager.GetInstance().RemoveEventListener<int>("SomeEvent", OnSomeEvent);
+        }
+    }
+
+    private void OnEnable()
+    {
+        Register();
+    }
+
+    private void OnDisable()
+    {
+        // 清理所有动画
+        DOTween.KillAll();
+        DOTween.Clear();
+    }
+
     private void OnDestroy()
     {
-        // 确保在场景关闭时终止所有的 DOTween 动画
+        UnRegister();
+        
+        // 移除所有按钮事件监听
+        if (startBtn != null) startBtn.onClick.RemoveAllListeners();
+        if (exitBtn != null) exitBtn.onClick.RemoveAllListeners();
+        if (creditsBtn != null) creditsBtn.onClick.RemoveAllListeners();
+        if (loadBtn != null) loadBtn.onClick.RemoveAllListeners();
+        if (settingBtn != null) settingBtn.onClick.RemoveAllListeners();
+    }
+
+    // 修改安全退出方法
+    private void SafeExit()
+    {
+        // 先停止所有动画并等待完成
         DOTween.KillAll();
+        DOTween.Clear();
+        Resources.UnloadUnusedAssets();
+        
+        // 使用延迟调用来确保清理完成后再退出
+        StartCoroutine(DelayedExit());
+    }
+
+    private IEnumerator DelayedExit()
+    {
+        // 等待一帧确保所有清理完成
+        yield return null;
+        
+        // 然后调用游戏管理器的退出方法
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ExitGame();
+        }
     }
 
     private void Update()

@@ -16,6 +16,8 @@ public class MonoManager : BaseManager<MonoManager>
         //保证了MonoController的唯一性
         GameObject obj = new GameObject("MonoController");
         controller = obj.AddComponent<MonoController>();
+        // 确保在场景切换时不被销毁
+        GameObject.DontDestroyOnLoad(obj);
     }
     
     /// <summary>
@@ -24,16 +26,18 @@ public class MonoManager : BaseManager<MonoManager>
     /// <param name="fun"></param>
     public void AddUpdateListener(UnityAction fun)
     {
-        controller.AddUpdateListener(fun);
+        if (controller != null)
+            controller.AddUpdateListener(fun);
     }
     
     /// <summary>
     /// 给外部用于移除帧更新的函数
     /// </summary>
     /// <param name="fun"></param>
-    public void RemoveUpdateLisener(UnityAction fun)
+    public void RemoveUpdateListener(UnityAction fun)
     {
-        controller.RemoveUpdateLisener(fun);
+        if (controller != null)
+            controller.RemoveUpdateListener(fun);
     }
 
     #region 协程相关函数封装
@@ -45,7 +49,34 @@ public class MonoManager : BaseManager<MonoManager>
     /// <returns></returns>
     public Coroutine StartCoroutine(IEnumerator routine)
     {
-        return controller.StartCoroutine(routine);
+        if (controller != null)
+            return controller.StartCoroutine(routine);
+        return null;
+    }
+
+    public void StopCoroutine(Coroutine routine)
+    {
+        if (controller != null && routine != null)
+            controller.StopCoroutine(routine);
+    }
+
+    public void StopAllCoroutines()
+    {
+        if (controller != null)
+            controller.StopAllCoroutines();
+    }
+
+    // 修改清理方法
+    public void Clear()
+    {
+        if (controller != null)
+        {
+            // 停止所有协程
+            controller.StopAllCoroutines();
+            
+            // 清理所有更新事件
+            controller.ClearAllUpdateListeners();
+        }
     }
 
     #endregion

@@ -43,13 +43,50 @@ namespace Bubble
 
         private void Start()
         {
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran2,
-                obj => { _nextBubbleEntity = obj; });
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran1,
-                obj => { _curBubbleEntity = obj; });
-            _ray = new Ray();
-            _ray.origin = this.transform.position;
-            _ray.direction = _dir;
+            // 延迟一帧再初始化，确保所有管理器都准备好
+            StartCoroutine(DelayedInit());
+        }
+
+        private IEnumerator DelayedInit()
+        {
+            yield return null;  // 等待一帧
+
+            try
+            {
+                if (BubbleManager.GetInstance() != null)
+                {
+                    // 使用 ShooterManager 来获取下一个泡泡类型
+                    BubbleManager.GetInstance().CreatBubbleByType(
+                        ShooterManager.GetInstance().nextType(),
+                        tran1,
+                        (bubble) =>
+                        {
+                            if (bubble != null)
+                            {
+                                _curBubbleEntity = bubble;
+                                BubbleManager.GetInstance().CreatBubbleByType(
+                                    ShooterManager.GetInstance().nextType(),
+                                    tran2,
+                                    nextBubble =>
+                                    {
+                                        _nextBubbleEntity = nextBubble;
+                                        _ray = new Ray();
+                                        _ray.origin = this.transform.position;
+                                        _ray.direction = _dir;
+                                    }
+                                );
+                            }
+                        });
+                }
+                else
+                {
+                    Debug.LogError("BubbleManager instance is null!");
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Error in BubbleShooter Init: {e.Message}");
+            }
         }
 
         private void Register()
