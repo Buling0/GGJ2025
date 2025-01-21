@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,16 +12,34 @@ namespace Bubble
     {
         public void CreatBubbleByType(BubbleType bt, Transform root, UnityAction<BubbleEntity> callback)
         {
-            BubbleEntity be = null;
+            //20250121
+            if (root == null)
+            {
+                UnityEngine.Debug.Log("Root transform is null!");
+                return;
+            }
             
             ResManager.GetInstance().LoadAsync<GameObject>("BubblePrefabs/" + bt.ToString(), (obj) =>
             {
-                be = obj.GetComponent<BubbleEntity>();
-                callback(be);
+                //20250121
+                if (obj == null)
+                {
+                    UnityEngine.Debug.LogError("Failed to load bubble prefab!");
+                    return;
+                }
+                
+                BubbleEntity be = obj.GetComponent<BubbleEntity>();
+                if (be == null)
+                {
+                    UnityEngine.Debug.LogError("BubbleEntity component not found!");
+                    return;
+                }
                 
                 //对泡泡预制体进行一些初始化操作
                 obj.transform.SetParent(root);
                 obj.transform.localPosition = Vector3.zero;
+                //20250121
+                callback?.Invoke(be);
             });
         }
         

@@ -25,8 +25,10 @@ namespace Bubble
         private BubbleEntity _nextBubbleEntity;
         public int plusNum = 0;
 
-        public Transform bubbleRod; // 泡泡杆的Transform引用
+        //public Transform bubbleRod; // 泡泡杆的Transform引用
         public Transform shooterRoot; // ShooterRoot的Transform引用
+
+        private bool _canShoot = true; // 添加发射状态标记 20250121
 
         private void Awake()
         {
@@ -124,10 +126,10 @@ namespace Bubble
 
             // 更新泡泡杆的旋转，使其与射线平行并加上90°的旋转差距
             float angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
-            bubbleRod.rotation = Quaternion.Euler(0, 0, angle + 90f);
+            //.rotation = Quaternion.Euler(0, 0, angle + 90f);
 
             // 确保泡泡杆的位置与射线的起点一致
-            bubbleRod.position = _ray.origin;
+            //bubbleRod.position = _ray.origin;
 
             // 更新ShooterRoot的位置
             if (shooterRoot != null)
@@ -149,17 +151,30 @@ namespace Bubble
 
         private void Shooter()
         {
+            if (!_canShoot || _curBubbleEntity == null) return;
+            
+            _canShoot = false; // 发射后禁止连续发射 20250121
             _curBubbleEntity.AddForce(_dir, force);
             Invoke("FillNextBubble", 0.6f);
         }
 
         private void FillNextBubble()
         {
+            if (_nextBubbleEntity == null) return; //20250121
+            
             _curBubbleEntity = _nextBubbleEntity;
             _curBubbleEntity.transform.SetParent(tran1);
             _curBubbleEntity.transform.localPosition = Vector3.zero;
-            BubbleManager.GetInstance().CreatBubbleByType(ShooterManager.GetInstance().nextType(), tran2,
-                obj => { _nextBubbleEntity = obj; });
+            
+            // 创建下一个泡泡 20250121
+            BubbleManager.GetInstance().CreatBubbleByType(
+                ShooterManager.GetInstance().nextType(), 
+                tran2,
+                obj => { 
+                    _nextBubbleEntity = obj;
+                    _canShoot = true; // 新泡泡准备好后才允许发射
+                }
+            );
 
             StartCheck();
         }

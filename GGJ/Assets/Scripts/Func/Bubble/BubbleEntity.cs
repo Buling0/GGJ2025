@@ -198,6 +198,7 @@ namespace Bubble
         //传入发射方向单位向量，fv是力的大小
         public void AddForce(Vector2 dir, float fv)
         {
+            if (_rigidbody2D == null) return;//20250121
             _rigidbody2D.AddForce(dir * fv, ForceMode2D.Impulse);
         }
 
@@ -377,9 +378,14 @@ namespace Bubble
 
         public void DestorySelf()
         {
+            if (gameObject == null) return;//20250121
+            
             gameObject.SetActive(false);
             AdjoinBubbleDic.Clear();
             UnRegister();
+            
+            // 确保在销毁前清理引用20250121
+            _rigidbody2D = null;
             Destroy(this.gameObject);
         }
     }
