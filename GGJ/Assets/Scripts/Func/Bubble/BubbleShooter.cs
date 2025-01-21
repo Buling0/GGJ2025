@@ -25,7 +25,7 @@ namespace Bubble
         private BubbleEntity _nextBubbleEntity;
         public int plusNum = 0;
 
-        //public Transform bubbleRod; // 泡泡杆的Transform引用
+        public Transform bubbleRod; // 泡泡杆的Transform引用
         public Transform shooterRoot; // ShooterRoot的Transform引用
 
         private bool _canShoot = true; // 添加发射状态标记 20250121
@@ -107,30 +107,26 @@ namespace Bubble
 
         private void RotateDir()
         {
-            curAngle = curAngle + _isRotateRight * rotateSpeed * Time.deltaTime * 0.1f;
-            if (curAngle >= curAngle + limitAngle)
-            {
-                curAngle = curAngle + limitAngle;
-            }
-            else if (curAngle <= curAngle - limitAngle)
-            {
-                curAngle = curAngle - limitAngle;
-            }
+            // 计算新的角度
+            float newAngle = curAngle + _isRotateRight * rotateSpeed * Time.deltaTime * 0.1f;
+            
+            // 限制角度范围在-1.5到1.5之间
+            curAngle = Mathf.Clamp(newAngle, -1.5f, 1.5f);
 
             Vector2 v = _dir;
             
             v.x = Vector2.up.x * Mathf.Cos(curAngle) - Vector2.up.y * Mathf.Sin(curAngle);
             v.y = Vector2.up.x * Mathf.Sin(curAngle) + Vector2.up.y * Mathf.Cos(curAngle);
-
+            
             _dir = v;
-
-            // 更新泡泡杆的旋转，使其与射线平行并加上90°的旋转差距
+            
+            // 更新泡泡杆的旋转
             float angle = Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg;
-            //.rotation = Quaternion.Euler(0, 0, angle + 90f);
-
+            bubbleRod.rotation = Quaternion.Euler(0, 0, angle + 90f);
+            
             // 确保泡泡杆的位置与射线的起点一致
-            //bubbleRod.position = _ray.origin;
-
+            bubbleRod.position = _ray.origin;
+            
             // 更新ShooterRoot的位置
             if (shooterRoot != null)
             {

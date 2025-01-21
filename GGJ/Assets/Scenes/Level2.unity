@@ -326,6 +326,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 327544446}
     m_Modifications:
+    - target: {fileID: 6117841060495568951, guid: 7fd069698b6e1634b8caa0bfc54634a7, type: 3}
+      propertyPath: bubbleRod
+      value: 
+      objectReference: {fileID: 529858428}
     - target: {fileID: 6117841060568867526, guid: 7fd069698b6e1634b8caa0bfc54634a7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -416,6 +420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fd069698b6e1634b8caa0bfc54634a7, type: 3}
+--- !u!224 &529858428 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8954978556807527484, guid: 8ba622d85c23f18419c9a25c7fe92808, type: 3}
+  m_PrefabInstance: {fileID: 1382198454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &755638742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8954978557291003276, guid: 8ba622d85c23f18419c9a25c7fe92808, type: 3}
