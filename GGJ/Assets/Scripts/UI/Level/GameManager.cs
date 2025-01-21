@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     }
 
     // 关卡目标分数数组，StartTest和EndTest的目标分数设置为0
-    private int[] levelTargetScores = { 0, 8, 8, 16, 16, 32, 32, 64, 64, 128, 0 };
+    private int[] levelTargetScores = { 0, 32, 32, 64, 64, 128, 128, 256, 256, 512, 0 };
     private string[] sceneNames = { 
         "Start", 
         "Level1",

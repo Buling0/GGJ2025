@@ -20,7 +20,7 @@ public class LevelUIManager : MonoBehaviour
     private GameManager gameManager; // 引用GameManager以便更新分数和切换场景
 
     // 各个场景的目标分数，StartTest和EndTest的目标分数为0
-    private int[] levelTargetScores = { 0, 8, 8, 16, 16, 32, 32, 64, 64, 128, 0 };
+    private int[] levelTargetScores = { 0, 32, 32, 64, 64, 128, 128, 256, 256, 512, 0 };
     private string[] sceneNames = { 
         "Start", 
         "Level1",
