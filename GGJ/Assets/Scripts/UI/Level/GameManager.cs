@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using System.Collections;
+using Bubble;
 
 public class GameManager : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
     }
 
     // 关卡目标分数数组，StartTest和EndTest的目标分数设置为0
-    private int[] levelTargetScores = { 0, 10, 10, 20, 20, 30, 30, 40, 40, 50, 0 };
+    private int[] levelTargetScores = { 0, 8, 8, 16, 16, 32, 32, 64, 64, 128, 0 };
     private string[] sceneNames = { 
         "Start", 
         "Level1",
@@ -93,31 +94,71 @@ public class GameManager : MonoBehaviour
 
     private void CleanupCurrentScene()
     {
-        // 停止所有协程
-        StopAllCoroutines();
+        Debug.Log("Starting scene cleanup...");
         
-        // 只清理特定的事件监听
-        if (EventManager.GetInstance() != null)
-        {
-            EventManager.GetInstance().RemoveEventListener<int>("ScoreChange", null);
-        }
+        // 1. 先清理UI和游戏对象
+        CleanupGameObjects();
         
-        // 销毁所有不需要持久化的对象，但保留必要的管理器
+        // 2. 清理特定事件（保留系统事件）
+        CleanupEvents();
+        
+        // 3. 清理动画
+        CleanupAnimations();
+    }
+
+    private void CleanupGameObjects()
+    {
+        // 获取所有游戏对象
         GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+        
         foreach (GameObject obj in allObjects)
         {
-            if (obj != gameObject && 
-                !obj.CompareTag("DontDestroy") && 
-                obj.GetComponent<AudioListener>() != persistentAudioListener &&
-                !obj.name.Contains("Manager")) // 保留管理器对象
-            {
-                Destroy(obj);
-            }
+            // 跳过需要保留的对象
+            if (ShouldPreserveObject(obj))
+                continue;
+
+            // 销毁其他对象
+            Destroy(obj);
+        }
+    }
+
+    private bool ShouldPreserveObject(GameObject obj)
+    {
+        // 保留的对象类型
+        if (obj == gameObject || // GameManager自身
+            obj.CompareTag("DontDestroy") || // 标记为不销毁的对象
+            obj.GetComponent<AudioListener>() == persistentAudioListener || // 持久的音频监听器
+            obj.name.Contains("Manager") || // 所有管理器
+            obj.GetComponent<MonoController>() != null || // MonoController
+            obj.GetComponent<SoundEffectsManager>() != null) // 音效管理器
+        {
+            return true;
         }
 
-        // 不再强制进行资源回收
-        // Resources.UnloadUnusedAssets();
-        // System.GC.Collect();
+        // 检查是否是泡泡相关的重要对象
+        if (obj.GetComponent<BubbleEntity>() != null || // 泡泡实体
+            obj.GetComponent<BubbleShooter>() != null) // 泡泡发射器
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private void CleanupEvents()
+    {
+        if (EventManager.GetInstance() != null)
+        {
+            // 只清理游戏相关的事件，保留系统事件
+            EventManager.GetInstance().RemoveEventListener<int>("ScoreChange", null);
+            // 可以添加其他需要清理的特定事件
+        }
+    }
+
+    private void CleanupAnimations()
+    {
+        // 停止当前场景的动画，但不清理整个DOTween系统
+        DOTween.KillAll(false); // false表示不完成动画直接停止
     }
 
     public void AddScore(int scoreToAdd)
@@ -153,20 +194,109 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        Debug.Log($"Current scene index before increment: {currentSceneIndex}");
+        Debug.Log($"Loading next level. Current scene index: {currentSceneIndex}");
         currentSceneIndex++;
         
         if (currentSceneIndex < sceneNames.Length)
         {
-            LoadScene(sceneNames[currentSceneIndex]);
+            // 温和的清理
+            CleanupCurrentScene();
+            
+            // 使用协程加载下一个场景
+            StartCoroutine(LoadNextLevelAsync(sceneNames[currentSceneIndex]));
         }
         else
         {
-            Debug.LogWarning("No more levels to load.");
-            // 可选：重置游戏或返回主菜单
+            Debug.Log("Game completed, returning to start");
             currentSceneIndex = 0;
             LoadScene(sceneNames[currentSceneIndex]);
         }
+    }
+
+    private IEnumerator LoadNextLevelAsync(string sceneName)
+    {
+        // 等待一帧确保清理完成
+        yield return null;
+
+        // 创建临时相机
+        GameObject tempCam = CreateTemporaryCamera();
+
+        // 加载新场景
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // 等待场景初始化
+        yield return new WaitForEndOfFrame();
+
+        // 清理临时相机
+        if (tempCam != null)
+            Destroy(tempCam);
+
+        // 初始化新场景
+        InitializeNewScene();
+    }
+
+    private GameObject CreateTemporaryCamera()
+    {
+        GameObject tempCam = new GameObject("TempCamera");
+        Camera cam = tempCam.AddComponent<Camera>();
+        cam.clearFlags = CameraClearFlags.SolidColor;
+        cam.backgroundColor = Color.black;
+        DontDestroyOnLoad(tempCam);
+        return tempCam;
+    }
+
+    private void InitializeNewScene()
+    {
+        // 确保场景有主相机
+        if (Camera.main == null)
+        {
+            CreateMainCamera();
+        }
+
+        // 禁用多余的AudioListener
+        DisableExtraAudioListeners();
+
+        // 重新初始化必要的管理器
+        InitializeManagers();
+    }
+
+    private void CreateMainCamera()
+    {
+        GameObject camObj = new GameObject("Main Camera");
+        Camera cam = camObj.AddComponent<Camera>();
+        cam.tag = "MainCamera";
+    }
+
+    private void DisableExtraAudioListeners()
+    {
+        AudioListener[] listeners = FindObjectsOfType<AudioListener>();
+        foreach (AudioListener listener in listeners)
+        {
+            if (listener != persistentAudioListener)
+            {
+                listener.enabled = false;
+            }
+        }
+    }
+
+    private void InitializeManagers()
+    {
+        // 确保所有必要的管理器都被正确初始化
+        if (BubbleManager.GetInstance() != null)
+        {
+            // 初始化泡泡管理器的状态
+        }
+
+        if (SoundEffectsManager.Instance != null)
+        {
+            // 重新设置音效管理器的状态
+        }
+
+        // 可以添加其他管理器的初始化
     }
 
     private void LoadScene(string sceneName)
@@ -249,6 +379,8 @@ public class GameManager : MonoBehaviour
     {
         currentScore = 0;
         currentSceneIndex = 0;
+        // 重置连击计数
+        ScoreManager.GetInstance().ResetCombo();
         // 重置其他需要重置的游戏状态...
     }
 

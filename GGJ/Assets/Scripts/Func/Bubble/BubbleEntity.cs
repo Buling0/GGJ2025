@@ -346,9 +346,9 @@ namespace Bubble
             {
                 isDestorying = true;
                 int num;
-                //AdjoinBubbleDic.Add(this);
                 AdjoinBubbleDic.EliminateByType(bubbleEntity.GetBubbleType(), out num);
-                Debug.Log("消除了" + num + "个");
+                Debug.Log($"消除了{num}个{bubbleEntity.GetBubbleType()}泡泡");
+                
                 if (num == 0)
                 {
                     isDestorying = false;
