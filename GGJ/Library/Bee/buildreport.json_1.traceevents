@@ -1,536 +1,514 @@
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
 { "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 0, "tid": 1, "ts": 1737301974537197, "dur": 716976, "ph": "X", "name": "Build Player", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301974537244, "dur": 10889, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301974548135, "dur": 48106, "ph": "X", "name": "Run Backend", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301974596243, "dur": 398112, "ph": "X", "name": "BuildProgram", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301974994357, "dur": 251080, "ph": "X", "name": "Run Backend", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301975245440, "dur": 8733, "ph": "X", "name": "Finish", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301975255207, "dur": 14, "ph": "X", "name": "", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469777470905, "dur": 1558182, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469777471152, "dur": 3724, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469777474879, "dur": 48435, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469777523317, "dur": 1035470, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469778558789, "dur": 455466, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469779014258, "dur": 14828, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469779030047, "dur": 14, "ph": "X", "name": "", "args": {} },
 { "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
 { "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
 { "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 35942, "tid": 1, "ts": 1737301974684961, "dur": 288495, "ph": "X", "name": "BuildProgram", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1737301974685809, "dur": 45023, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1737301974948646, "dur": 5368, "ph": "X", "name": "OutputData.Write", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1737301974954021, "dur": 19406, "ph": "X", "name": "Backend.Write", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1737301974955119, "dur": 17409, "ph": "X", "name": "JsonToString", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1737301974978867, "dur": 1314, "ph": "X", "name": "", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1737301974977993, "dur": 2225, "ph": "X", "name": "Write chrome-trace events", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301975255412, "dur": 475, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778204963, "dur": 334399, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778205819, "dur": 46591, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778517290, "dur": 6787, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778524082, "dur": 15265, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778524856, "dur": 13597, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778544255, "dur": 1152, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1737469778543503, "dur": 1935, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469779030335, "dur": 376, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1737301975047530, "dur":1883, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975049419, "dur":36, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
-,{ "pid":12345, "tid":0, "ts":1737301975049465, "dur":14, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
-,{ "pid":12345, "tid":0, "ts":1737301975049479, "dur":690, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
-,{ "pid":12345, "tid":0, "ts":1737301975050208, "dur":531, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975050739, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975200470, "dur":297, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975200767, "dur":56, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975200824, "dur":138, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975200962, "dur":23, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975200985, "dur":45, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201030, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201038, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201042, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201048, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201050, "dur":13, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201063, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201065, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201071, "dur":91, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201162, "dur":22, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201184, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201189, "dur":11, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201200, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201203, "dur":14, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201217, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201221, "dur":10, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975201231, "dur":1156, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202387, "dur":15, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202402, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202406, "dur":38, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202444, "dur":5, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202449, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202456, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202459, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202465, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202468, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202474, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202476, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202482, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202513, "dur":5, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975202547, "dur":2237, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1737301975050377, "dur":425, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975050803, "dur":3787, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975054603, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":1, "ts":1737301975054739, "dur":257, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975055001, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975102841, "dur":2450, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":1, "ts":1737301975105320, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975105386, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975105391, "dur":10650, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975116102, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975116154, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975116159, "dur":16941, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975133157, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975133213, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975133222, "dur":9130, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975142432, "dur":441, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975142878, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975142887, "dur":8276, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975151232, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975151295, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975151305, "dur":6206, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975157561, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975157613, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975157734, "dur":24654, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":1, "ts":1737301975182449, "dur":1928, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/sharedassets0.resource" }}
-,{ "pid":12345, "tid":1, "ts":1737301975184381, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1737301975184389, "dur":6028, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/sharedassets0.resource" }}
-,{ "pid":12345, "tid":1, "ts":1737301975190471, "dur":10211, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975050249, "dur":501, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975050753, "dur":3832, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975054601, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1737301975054616, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975055571, "dur":300, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1737301975055875, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1737301975055949, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975056398, "dur":2936, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/app.info" }}
-,{ "pid":12345, "tid":2, "ts":1737301975059337, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":2, "ts":1737301975059356, "dur":53, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975059414, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975059702, "dur":1423, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":2, "ts":1737301975061154, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975061175, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975061248, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975061570, "dur":1639, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975063235, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//UnityPlayer.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975063263, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975063333, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975063339, "dur":18952, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//UnityPlayer.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975082318, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975082392, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975082401, "dur":4709, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975087171, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975087231, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975087240, "dur":5304, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975092615, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975092675, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975092683, "dur":6055, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975098789, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975098841, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975098851, "dur":9116, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975108070, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975108139, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975108149, "dur":50428, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975158655, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975158715, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1737301975158724, "dur":39853, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":2, "ts":1737301975198643, "dur":2165, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975050316, "dur":460, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975050776, "dur":3813, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975054602, "dur":205, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1737301975054807, "dur":226, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975055041, "dur":5, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975121352, "dur":13476, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1737301975134862, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1737301975134942, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975134951, "dur":19576, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1737301975154632, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":3, "ts":1737301975154691, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1737301975154699, "dur":30744, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":3, "ts":1737301975185492, "dur":14988, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975050303, "dur":457, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975050761, "dur":3832, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975054602, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":4, "ts":1737301975054655, "dur":284, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975054945, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975088872, "dur":2445, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":4, "ts":1737301975091345, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975091408, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975091412, "dur":4143, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975095620, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975095694, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975095704, "dur":5754, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975101503, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975101579, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975101584, "dur":7920, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975109567, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975109622, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975109631, "dur":6323, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975116042, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975116140, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975116148, "dur":28605, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975144819, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975144882, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975144891, "dur":7134, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975152102, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975152219, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975152226, "dur":28755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975181064, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975181124, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1737301975181134, "dur":6169, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":4, "ts":1737301975187382, "dur":13194, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975050367, "dur":419, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975050786, "dur":3950, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975054737, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":5, "ts":1737301975054776, "dur":233, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975055040, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975103955, "dur":1503, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":5, "ts":1737301975105479, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975105533, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975105537, "dur":6504, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975112109, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975112168, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975112177, "dur":21246, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975133472, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975133519, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975133526, "dur":11593, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975145175, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975145243, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975145251, "dur":10006, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975155311, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975155359, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975155367, "dur":28535, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":5, "ts":1737301975183961, "dur":165, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":5, "ts":1737301975184130, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1737301975184137, "dur":2815, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":5, "ts":1737301975187883, "dur":12608, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975050418, "dur":395, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975050814, "dur":3773, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975054601, "dur":226, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":6, "ts":1737301975054827, "dur":234, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975055066, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975135161, "dur":4367, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":6, "ts":1737301975139560, "dur":427, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":6, "ts":1737301975139993, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975140003, "dur":11422, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":6, "ts":1737301975151480, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":6, "ts":1737301975151532, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1737301975151539, "dur":33884, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":6, "ts":1737301975185613, "dur":14890, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975050459, "dur":365, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975050824, "dur":3806, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975054631, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1737301975054657, "dur":79, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975054742, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975056902, "dur":2410, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1737301975059336, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1737301975059352, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975059432, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975059985, "dur":1114, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":7, "ts":1737301975061123, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":7, "ts":1737301975061141, "dur":59, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975061230, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975061239, "dur":1363, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":7, "ts":1737301975062627, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975062658, "dur":45, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975062708, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975062863, "dur":6088, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975068989, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":7, "ts":1737301975069029, "dur":78, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975069112, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975069120, "dur":2582, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":7, "ts":1737301975071733, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":7, "ts":1737301975071813, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975072223, "dur":9763, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":7, "ts":1737301975082013, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975082177, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975082219, "dur":5881, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975088156, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975088202, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975088209, "dur":5144, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975093425, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975093501, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975093508, "dur":7211, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975100783, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975100846, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975100856, "dur":11914, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975112819, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975112870, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975112876, "dur":27667, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975140600, "dur":766, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975141370, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975141376, "dur":14024, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975155453, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975155514, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1737301975155522, "dur":31332, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":7, "ts":1737301975186938, "dur":14160, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975050496, "dur":338, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975050834, "dur":3840, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975054674, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":8, "ts":1737301975054710, "dur":189, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975054904, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975072190, "dur":1556, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":8, "ts":1737301975073781, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975073846, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975073940, "dur":2226, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975076270, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975076372, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975076388, "dur":5204, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975081649, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975081729, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975081740, "dur":3604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975085418, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975085543, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975085551, "dur":4978, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975090592, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975090648, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975090656, "dur":6279, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975097000, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975097063, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975097073, "dur":4283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975101409, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975101459, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975101467, "dur":6854, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975108382, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975108445, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975108454, "dur":13335, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975121844, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975121895, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975121903, "dur":26749, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975148703, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975148759, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975148768, "dur":5114, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975153935, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975153991, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975154032, "dur":30292, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":8, "ts":1737301975184384, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/data.unity3d" }}
-,{ "pid":12345, "tid":8, "ts":1737301975184442, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1737301975184447, "dur":10861, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/data.unity3d" }}
-,{ "pid":12345, "tid":8, "ts":1737301975195364, "dur":5416, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975050534, "dur":309, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975050844, "dur":3744, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975054602, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":9, "ts":1737301975054654, "dur":171, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975054830, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975070206, "dur":1254, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":9, "ts":1737301975071541, "dur":1628, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams.exe" }}
-,{ "pid":12345, "tid":9, "ts":1737301975073173, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975073180, "dur":3950, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams.exe" }}
-,{ "pid":12345, "tid":9, "ts":1737301975077230, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975077310, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975077321, "dur":4903, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975082293, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975082347, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975082352, "dur":3829, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975086257, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975086323, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975086333, "dur":4573, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975090961, "dur":362, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975091327, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975091334, "dur":5595, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975096998, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975097068, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975097074, "dur":7206, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975104740, "dur":606, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975105350, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975105360, "dur":12593, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975118014, "dur":70, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975118088, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975118096, "dur":19181, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975137328, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975137378, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975137386, "dur":9820, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975147278, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975147334, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975147342, "dur":10066, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975157467, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975157524, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975157533, "dur":26900, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":9, "ts":1737301975184482, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1737301975184618, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":9, "ts":1737301975184624, "dur":5898, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/boot.config" }}
-,{ "pid":12345, "tid":9, "ts":1737301975190567, "dur":10259, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975050581, "dur":272, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975050853, "dur":3781, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975054635, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":10, "ts":1737301975054663, "dur":182, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975054851, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975072183, "dur":2225, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":10, "ts":1737301975074442, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975074526, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975074535, "dur":7229, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975081836, "dur":115, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975081955, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975081960, "dur":4278, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975086298, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975086356, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975086363, "dur":5601, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975092017, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975092085, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975092093, "dur":6107, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975098304, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975098374, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975098383, "dur":6312, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975104940, "dur":168, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975105115, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975105126, "dur":9619, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975114799, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975114862, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975114872, "dur":32329, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975151960, "dur":84, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975152049, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975152066, "dur":31895, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":10, "ts":1737301975184031, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/resources.resource" }}
-,{ "pid":12345, "tid":10, "ts":1737301975184101, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":10, "ts":1737301975184111, "dur":5066, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/resources.resource" }}
-,{ "pid":12345, "tid":10, "ts":1737301975189374, "dur":11209, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975050611, "dur":251, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975050862, "dur":3753, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975054616, "dur":130, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":11, "ts":1737301975054746, "dur":212, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975054963, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975090013, "dur":2589, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":11, "ts":1737301975092656, "dur":513, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1737301975093176, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975093187, "dur":7126, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1737301975100387, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1737301975100455, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975100463, "dur":9937, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1737301975110461, "dur":84, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1737301975110549, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":11, "ts":1737301975110555, "dur":89713, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":11, "ts":1737301975200357, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
-,{ "pid":12345, "tid":11, "ts":1737301975200359, "dur":0, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975050659, "dur":212, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975050871, "dur":3723, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975054602, "dur":196, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":12, "ts":1737301975054798, "dur":251, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975055054, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975122281, "dur":1378, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":12, "ts":1737301975123691, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975123752, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975123763, "dur":17336, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975141154, "dur":65, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975141222, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975141231, "dur":6240, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975147529, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975147599, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975147607, "dur":5780, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975153447, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975153517, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975153527, "dur":28865, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975182448, "dur":181, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Assembly-CSharp-firstpass.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975182635, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":12, "ts":1737301975182641, "dur":8935, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Assembly-CSharp-firstpass.dll" }}
-,{ "pid":12345, "tid":12, "ts":1737301975191629, "dur":9257, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975050802, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975050804, "dur":3916, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975054721, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":13, "ts":1737301975054743, "dur":234, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975054982, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975102000, "dur":2088, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":13, "ts":1737301975104108, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975104172, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975104178, "dur":7308, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975111549, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975111607, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975111616, "dur":8577, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975120243, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975120294, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975120302, "dur":17522, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975137871, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975137976, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975137984, "dur":10661, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975148703, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975148758, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975148768, "dur":32982, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975181807, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/DOTween.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975181861, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":13, "ts":1737301975181869, "dur":11800, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/DOTween.dll" }}
-,{ "pid":12345, "tid":13, "ts":1737301975193719, "dur":7177, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975050711, "dur":170, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975050881, "dur":3732, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975054615, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":14, "ts":1737301975054683, "dur":98, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975054785, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975069263, "dur":3562, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":14, "ts":1737301975072868, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975072979, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975073805, "dur":5252, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975079120, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975079170, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975079180, "dur":3908, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975083185, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975083295, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975083305, "dur":5693, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975089079, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975089142, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975089150, "dur":5968, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975095236, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975095301, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975095319, "dur":7125, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975102520, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975102586, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975102595, "dur":10087, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975112743, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975112798, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975112807, "dur":28659, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975141519, "dur":284, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975141809, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975141817, "dur":10252, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975152132, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975152187, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975152193, "dur":29599, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975181947, "dur":612, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975182563, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":14, "ts":1737301975182876, "dur":8720, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":14, "ts":1737301975191649, "dur":9128, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975050753, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975050754, "dur":3838, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975054602, "dur":81, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":15, "ts":1737301975054683, "dur":244, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975054933, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975088288, "dur":3395, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":15, "ts":1737301975091712, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975091772, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975091781, "dur":6447, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975098298, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975098377, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975098387, "dur":11553, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975110293, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975110366, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975110376, "dur":27979, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975138411, "dur":184, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975138598, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975138607, "dur":16236, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975154913, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975154968, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":15, "ts":1737301975154976, "dur":44917, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":15, "ts":1737301975200090, "dur":378, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975050865, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975050866, "dur":3755, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975054623, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":16, "ts":1737301975054689, "dur":180, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975054873, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975071749, "dur":2443, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":16, "ts":1737301975074211, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975074275, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975074280, "dur":5398, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975079719, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975079790, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975079798, "dur":3636, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975083507, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975083574, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975083583, "dur":6008, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975089639, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975089740, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975089757, "dur":4464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975094281, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975094333, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975094342, "dur":5544, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975099959, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975100045, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975100293, "dur":7162, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975107520, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975107603, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975107612, "dur":74801, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":16, "ts":1737301975182464, "dur":141, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":16, "ts":1737301975182608, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":16, "ts":1737301975182637, "dur":4013, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop//Millennial Bubble Dreams_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":16, "ts":1737301975186751, "dur":13745, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1737301975207226, "dur":2253, "ph":"X", "name": "ProfilerWriteOutput" }
-,{ "pid": 0, "tid": 1, "ts": 1737301975256099, "dur": 1263, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1737301975255187, "dur": 2226, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+,{ "pid":12345, "tid":0, "ts":1737469778608406, "dur":1305, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778609718, "dur":40, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1737469778609768, "dur":10, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1737469778609778, "dur":569, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1737469778610368, "dur":534, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778610903, "dur":0, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778967816, "dur":88, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778967904, "dur":17, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778967921, "dur":3908, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971829, "dur":33, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971862, "dur":4, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971866, "dur":12, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971878, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971880, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971887, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971890, "dur":11, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778971901, "dur":164, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972065, "dur":10, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972075, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972077, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972085, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972087, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972092, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972094, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972099, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972102, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972107, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972110, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972114, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972117, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972122, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972125, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972129, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972132, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972136, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972138, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972143, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972145, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972152, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972372, "dur":6, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778972402, "dur":3590, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1737469778610595, "dur":331, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778610927, "dur":3649, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778614576, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1737469778614600, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778640634, "dur":15604, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1737469778656269, "dur":140, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778656414, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778656423, "dur":8885, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778665550, "dur":121, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778665675, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778665684, "dur":8534, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778674267, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778674318, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778674328, "dur":96125, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778770629, "dur":106, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778770739, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778770748, "dur":110470, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778881276, "dur":124, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778881403, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778881412, "dur":13460, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778894927, "dur":123, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778895053, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1737469778895063, "dur":72418, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":1, "ts":1737469778967536, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":1, "ts":1737469778967538, "dur":7, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778610661, "dur":279, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778610940, "dur":3592, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778614532, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1737469778614571, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778634308, "dur":19283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1737469778653620, "dur":131, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778653759, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778653772, "dur":8346, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778662168, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778662276, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778662285, "dur":5856, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778668193, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778668301, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778668307, "dur":9305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778677666, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778677725, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778677730, "dur":5498, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778683282, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778683333, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778683342, "dur":12434, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778695829, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778695875, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778695883, "dur":38660, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778734641, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778734697, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778734706, "dur":36732, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778771504, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778771565, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778771574, "dur":112391, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778884019, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778884143, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778884154, "dur":15301, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778899522, "dur":161, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778899689, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778899701, "dur":10273, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1737469778910026, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/resources.resource" }}
+,{ "pid":12345, "tid":2, "ts":1737469778910071, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1737469778910078, "dur":4587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/resources.resource" }}
+,{ "pid":12345, "tid":2, "ts":1737469778914709, "dur":55982, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778610651, "dur":280, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778610931, "dur":3608, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778614539, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1737469778614570, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778633272, "dur":16345, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":3, "ts":1737469778649644, "dur":111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778649758, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778649766, "dur":4235, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778654055, "dur":141, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778654201, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778654212, "dur":9317, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778663584, "dur":111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778663700, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778663710, "dur":9403, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778673159, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778673205, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778673214, "dur":14638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778687906, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778687990, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778687996, "dur":42548, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778730687, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778730739, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778730748, "dur":39734, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778770555, "dur":354, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778770917, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778770925, "dur":97657, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778868633, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778868776, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778868787, "dur":15487, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778884325, "dur":99, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778884428, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778884436, "dur":17938, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778902444, "dur":3232, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/DOTween.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778905682, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1737469778905692, "dur":8158, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/DOTween.dll" }}
+,{ "pid":12345, "tid":3, "ts":1737469778913894, "dur":53709, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778610739, "dur":221, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778610961, "dur":3539, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778614500, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1737469778614615, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778654369, "dur":4468, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1737469778658871, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1737469778658994, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778659002, "dur":9196, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1737469778668255, "dur":86, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1737469778668344, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778668358, "dur":123429, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1737469778791881, "dur":160, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":4, "ts":1737469778792048, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1737469778792058, "dur":143603, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":4, "ts":1737469778935713, "dur":31929, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778610578, "dur":337, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778610919, "dur":3556, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778614486, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":5, "ts":1737469778614498, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778615310, "dur":275, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":5, "ts":1737469778615590, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/app.info" }}
+,{ "pid":12345, "tid":5, "ts":1737469778615645, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778615938, "dur":2716, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/app.info" }}
+,{ "pid":12345, "tid":5, "ts":1737469778618658, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1737469778618708, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778619070, "dur":3712, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":5, "ts":1737469778622809, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1737469778622851, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778623189, "dur":4198, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":5, "ts":1737469778627418, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":5, "ts":1737469778627487, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778627494, "dur":5914, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":5, "ts":1737469778633434, "dur":85090, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble.exe" }}
+,{ "pid":12345, "tid":5, "ts":1737469778718556, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778718564, "dur":17069, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble.exe" }}
+,{ "pid":12345, "tid":5, "ts":1737469778735730, "dur":199, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1737469778735937, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778735947, "dur":36188, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1737469778772181, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1737469778772236, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1737469778772245, "dur":163057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1737469778935363, "dur":32344, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778610696, "dur":253, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778610949, "dur":3551, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778614500, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1737469778614556, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778616805, "dur":2455, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1737469778619277, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":6, "ts":1737469778619416, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778619422, "dur":3686, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":6, "ts":1737469778623129, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778623171, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778623258, "dur":24356, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778647638, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778647761, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778648586, "dur":9927, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778658575, "dur":160, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778658740, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778658777, "dur":6854, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778665926, "dur":198, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778666132, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778666142, "dur":11369, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778677573, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778677625, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778677633, "dur":13223, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778690910, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778690966, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778690975, "dur":37950, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778729080, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778729140, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778729150, "dur":41072, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778770280, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778770341, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778770350, "dur":36284, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778806689, "dur":182, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778806879, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778806892, "dur":65584, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778872525, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778872688, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778872699, "dur":11909, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778884657, "dur":153, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778884815, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778884826, "dur":20881, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778905757, "dur":988, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Assembly-CSharp-firstpass.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778906752, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1737469778906762, "dur":6748, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Assembly-CSharp-firstpass.dll" }}
+,{ "pid":12345, "tid":6, "ts":1737469778913557, "dur":57165, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778610780, "dur":188, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778610969, "dur":3510, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778614486, "dur":129, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":7, "ts":1737469778614617, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778700011, "dur":31260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":7, "ts":1737469778731323, "dur":172, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778731501, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778731512, "dur":38121, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778769689, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778769747, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778769753, "dur":23253, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778793075, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778793224, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778793232, "dur":92322, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778885605, "dur":263, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778885876, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778885887, "dur":20603, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":7, "ts":1737469778906858, "dur":262, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":7, "ts":1737469778907128, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1737469778907137, "dur":4838, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":7, "ts":1737469778912020, "dur":55589, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778610820, "dur":158, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778610978, "dur":3499, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778614486, "dur":650, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":8, "ts":1737469778615144, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778616961, "dur":2037, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":8, "ts":1737469778619021, "dur":304, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":8, "ts":1737469778619329, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778619339, "dur":4368, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":8, "ts":1737469778623729, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778623773, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778623779, "dur":39090, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778662892, "dur":103, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778662999, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778663008, "dur":10519, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778673621, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778673671, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778673682, "dur":11364, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778685098, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778685146, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778685154, "dur":50802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778736224, "dur":115, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778736346, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778736356, "dur":42544, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778778959, "dur":122, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778779085, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1737469778779094, "dur":153802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":8, "ts":1737469778932965, "dur":34792, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778610869, "dur":119, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778610988, "dur":3619, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778614608, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":9, "ts":1737469778614641, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778674791, "dur":3891, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":9, "ts":1737469778678713, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778678768, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778678776, "dur":13191, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778692020, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778692071, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778692079, "dur":8101, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778700228, "dur":105, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778700338, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778700347, "dur":36110, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778736522, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778736717, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778736727, "dur":35016, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778771807, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778771883, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1737469778771891, "dur":162060, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1737469778933999, "dur":33742, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778610926, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778610927, "dur":3635, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778614562, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1737469778614601, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778644910, "dur":13319, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":10, "ts":1737469778658259, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778658424, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778658436, "dur":75085, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778733580, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778733627, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778733634, "dur":44031, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778777722, "dur":9280, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778787008, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778787019, "dur":76782, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778863851, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778863990, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778863998, "dur":17493, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778881550, "dur":118, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778881674, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778881682, "dur":21081, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778902808, "dur":3353, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778906167, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1737469778906176, "dur":16262, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":10, "ts":1737469778922527, "dur":47233, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778610974, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778610974, "dur":3504, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778614486, "dur":143, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":11, "ts":1737469778614634, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778664376, "dur":3691, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":11, "ts":1737469778668096, "dur":116, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778668215, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778668223, "dur":10602, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778678884, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778678939, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778678947, "dur":16841, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778695839, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778695891, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778695925, "dur":36696, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778732988, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778733078, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778733087, "dur":36508, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778769654, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778769707, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778769714, "dur":10386, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778780181, "dur":1065, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778781249, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778781255, "dur":76771, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778858078, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778858131, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778858139, "dur":19384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778877579, "dur":115, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778877699, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778877709, "dur":28634, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":11, "ts":1737469778906394, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/sharedassets0.resource" }}
+,{ "pid":12345, "tid":11, "ts":1737469778906452, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778906460, "dur":3810, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/sharedassets0.resource" }}
+,{ "pid":12345, "tid":11, "ts":1737469778910320, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/data.unity3d" }}
+,{ "pid":12345, "tid":11, "ts":1737469778910369, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1737469778910377, "dur":12590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/data.unity3d" }}
+,{ "pid":12345, "tid":11, "ts":1737469778923031, "dur":44550, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1737469778611019, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1737469778611020, "dur":3625, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1737469778614646, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":12, "ts":1737469778614722, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1737469778700775, "dur":32479, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":12, "ts":1737469778733326, "dur":137, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1737469778733468, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1737469778733477, "dur":40963, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1737469778774514, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1737469778774565, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1737469778774570, "dur":158942, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1737469778933564, "dur":34188, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778611069, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778611069, "dur":3414, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778614487, "dur":75, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":13, "ts":1737469778614569, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778634529, "dur":4526, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":13, "ts":1737469778639083, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":13, "ts":1737469778639124, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778640154, "dur":12929, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":13, "ts":1737469778653111, "dur":129, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778653247, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778653255, "dur":8893, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778662193, "dur":293, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778662493, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778662505, "dur":10203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778672762, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778672814, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778672823, "dur":23930, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778696796, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778696840, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778696846, "dur":39926, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778736838, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778736888, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778736895, "dur":37260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778774234, "dur":114, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778774381, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1737469778774390, "dur":159317, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1737469778933756, "dur":33986, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778611111, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778611111, "dur":3466, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778614578, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":14, "ts":1737469778614601, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778642874, "dur":5134, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":14, "ts":1737469778648064, "dur":172, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778648241, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778649916, "dur":9793, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778659753, "dur":155, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778659912, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778659921, "dur":9830, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778669797, "dur":2096, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778671900, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778671911, "dur":10902, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778682867, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778682920, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778682928, "dur":13558, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778696531, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778696578, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778696586, "dur":40305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778736950, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778737027, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778737034, "dur":39793, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778776920, "dur":801, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778777726, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778777735, "dur":84491, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778862284, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778862422, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778862433, "dur":20437, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778882952, "dur":131, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778883089, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778883099, "dur":25521, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":14, "ts":1737469778908672, "dur":145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":14, "ts":1737469778908822, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778908853, "dur":3080, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":14, "ts":1737469778911978, "dur":136, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1737469778912117, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1737469778912124, "dur":8477, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/boot.config" }}
+,{ "pid":12345, "tid":14, "ts":1737469778922039, "dur":48084, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778611153, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778611153, "dur":3466, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778614621, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":15, "ts":1737469778614679, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778687903, "dur":5292, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":15, "ts":1737469778693221, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778693268, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778693276, "dur":84360, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778777708, "dur":3478, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778781231, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778781246, "dur":75602, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778856902, "dur":117, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778857025, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778857066, "dur":19753, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778876896, "dur":166, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778877070, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778877081, "dur":14394, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778891527, "dur":125, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778891658, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1737469778891668, "dur":23833, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":15, "ts":1737469778915552, "dur":52045, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778611218, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778611218, "dur":3267, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778614486, "dur":89, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":16, "ts":1737469778614581, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778635942, "dur":4368, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":16, "ts":1737469778640355, "dur":184, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778640544, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778640804, "dur":6813, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778647699, "dur":80, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778647782, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778649249, "dur":10422, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778659720, "dur":190, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778659914, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778659921, "dur":9911, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778669874, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778669920, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778669927, "dur":11932, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778681917, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778681972, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778681982, "dur":14603, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778696637, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778696699, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778696705, "dur":34681, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778731616, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778731671, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778731678, "dur":37890, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778769626, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778769678, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778769687, "dur":10742, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778780607, "dur":7727, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778788340, "dur":6, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1737469778788354, "dur":141394, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/cwj_0810/Desktop/Y2K Dream Bubble/Y2K Dream Bubble_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":16, "ts":1737469778929791, "dur":38001, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1737469778982471, "dur":3172, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1737469779030874, "dur": 1177, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1737469779030028, "dur": 2075, "ph": "X", "name": "Write chrome-trace events", "args": {} },
