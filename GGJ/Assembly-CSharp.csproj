@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Framwork\Base\BaseManager.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Music\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\UI\UIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Scripts\Framwork\InputManager\InputManager.cs" />
@@ -69,11 +69,11 @@
     <Compile Include="Assets\Scripts\Func\Score\ScorePanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\GameManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Level\GameManager.cs" />
     <Compile Include="Assets\Scripts\Func\Bubble\BubbleManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\EndPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\Level\EndPanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Framwork\Scene\ScenesManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -85,7 +85,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Framwork\CachePool\PoolManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\LevelOkManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Level\LevelOkManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\Res\ResManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -93,22 +93,22 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\SoundEffectsManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Music\SoundEffectsManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\Scripts\Framwork\Audio\TestAudio.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\LevelUIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Level\LevelUIManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\SceneTransitionManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Level\SceneTransitionManager.cs" />
     <Compile Include="Assets\Scripts\Framwork\CachePool\TestPool.cs" />
     <Compile Include="Assets\Scripts\Framwork\Mono\MonoController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Framwork\UI\BasePanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\Scripts\Framwork\UI\StartPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\Level\StartPanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Framwork\Event\EventManager.cs" />
