@@ -38,6 +38,10 @@ namespace Bubble
                 //对泡泡预制体进行一些初始化操作
                 obj.transform.SetParent(root);
                 obj.transform.localPosition = Vector3.zero;
+                
+                // 准备发射状态
+                be.PrepareForShoot();
+                
                 //20250121
                 callback?.Invoke(be);
             });

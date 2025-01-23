@@ -21,7 +21,7 @@ namespace Bubble
     //只能用于泡泡实体类，泛用性低，可考虑泛型类
     public class BubbleDic
     {
-        private bool isBeLiminate = false;
+        //private bool isBeLiminate = false;
         private Dictionary<BubbleType, List<BubbleEntity>> Dic = new Dictionary<BubbleType, List<BubbleEntity>>();
 
         public void Add(BubbleEntity bubbleEntity)
@@ -115,7 +115,6 @@ namespace Bubble
         {
             if (!Dic.ContainsKey(bubbleType))
             {
-                isBeLiminate = true;
                 return null;
             }
             
@@ -130,7 +129,6 @@ namespace Bubble
                 }
             }
             
-            isBeLiminate = true;
             return list;
         }
 
@@ -177,6 +175,7 @@ namespace Bubble
         public BubbleDic AdjoinBubbleDic = new BubbleDic();
         public bool isDestorying = false;
         public bool isBlending = false;
+        private bool isReadyToShoot = true; // 添加标记来判断是否处于待发射状态
 
         private void Awake()
         {
@@ -186,12 +185,12 @@ namespace Bubble
             if (_rigidbody2D != null)
             {
                 _rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-                _rigidbody2D.sleepMode = RigidbodySleepMode2D.NeverSleep;  // 防止休眠
-                _rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;  // 添加插值
-                // 可以改为以下三种之一：
-                // _rigidbody2D.interpolation = RigidbodyInterpolation2D.None;  // 无插值，可能会有跳跃感
-                // _rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;  // 普通插值，平滑度适中
-                // _rigidbody2D.interpolation = RigidbodyInterpolation2D.Extrapolate;  // 外推插值，最平滑但可能有预测误差
+                _rigidbody2D.sleepMode = RigidbodySleepMode2D.NeverSleep;
+                _rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
+                
+                // 初始时禁用物理模拟
+                _rigidbody2D.simulated = false;
+                _rigidbody2D.gravityScale = 0;
             }
             
             Register();
@@ -211,11 +210,29 @@ namespace Bubble
             return bubbleType;
         }
 
-        //传入发射方向单位向量，fv是力的大小
+        // 添加准备发射的方法
+        public void PrepareForShoot()
+        {
+            if (_rigidbody2D != null)
+            {
+                _rigidbody2D.simulated = false;
+                _rigidbody2D.gravityScale = 0;
+                isReadyToShoot = true;
+            }
+        }
+
+        //修改发射方法
         public void AddForce(Vector2 dir, float fv)
         {
-            if (_rigidbody2D == null) return;//20250121
+            if (_rigidbody2D == null || !isReadyToShoot) return;
+            
+            // 发射时启用物理模拟和重力
+            _rigidbody2D.simulated = true;
+            _rigidbody2D.gravityScale = -1; // 设置为预制体中的值
+            
+            // 添加发射力
             _rigidbody2D.AddForce(dir * fv, ForceMode2D.Impulse);
+            isReadyToShoot = false; // 标记已发射
         }
 
         //碰撞开始 把碰撞物体加入字典
