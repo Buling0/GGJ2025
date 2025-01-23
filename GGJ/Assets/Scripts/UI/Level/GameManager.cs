@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             
+            // 初始化DOTween
+            DOTween.SetTweensCapacity(500, 50); // 设置适当的容量
+            
             // 创建持久的 AudioListener
             if (persistentAudioListener == null)
             {
@@ -157,8 +160,22 @@ public class GameManager : MonoBehaviour
 
     private void CleanupAnimations()
     {
-        // 停止当前场景的动画，但不清理整个DOTween系统
-        DOTween.KillAll(false); // false表示不完成动画直接停止
+        try
+        {
+            // 先暂停所有动画
+            DOTween.PauseAll();
+            
+            // 完全清理所有DOTween动画
+            DOTween.Clear(true); // true表示也清理完成的动画
+            DOTween.ClearCachedTweens();
+            
+            // 重新初始化DOTween（如果需要）
+            DOTween.Init();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"清理DOTween时出现异常: {e.Message}");
+        }
     }
 
     public void AddScore(int scoreToAdd)
@@ -285,6 +302,12 @@ public class GameManager : MonoBehaviour
 
     private void InitializeManagers()
     {
+        // 确保SoundEffectsManager存在
+        if (SoundEffectsManager.Instance != null)
+        {
+            Debug.Log("SoundEffectsManager initialized");
+        }
+        
         // 确保所有必要的管理器都被正确初始化
         if (BubbleManager.GetInstance() != null)
         {
@@ -354,17 +377,26 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         // 检测按下 Esc 键
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ExitGame();
-        }
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+            //ExitGame();
+        //}
     }
 
     public void ExitGame()
     {
-        // 确保在退出前清理所有动画和资源
-        DOTween.KillAll();
-        DOTween.Clear();
+        try
+        {
+            // 确保在退出前清理所有动画和资源
+            DOTween.PauseAll();
+            DOTween.Clear(true);
+            DOTween.ClearCachedTweens();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"退出时清理DOTween出现异常: {e.Message}");
+        }
+        
         Resources.UnloadUnusedAssets();
         
         #if UNITY_EDITOR
@@ -395,15 +427,32 @@ public class GameManager : MonoBehaviour
         // 取消订阅场景加载事件
         SceneManager.sceneLoaded -= OnSceneLoaded;
         
-        // 清理动画
-        DOTween.KillAll();
-        DOTween.Clear();
+        try
+        {
+            // 清理动画
+            DOTween.PauseAll();
+            DOTween.Clear(true);
+            DOTween.ClearCachedTweens();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"禁用时清理DOTween出现异常: {e.Message}");
+        }
     }
 
     private void OnDestroy()
     {
-        // 确保所有动画都被清理
-        DOTween.KillAll(true);
+        try
+        {
+            // 确保所有动画都被清理
+            DOTween.PauseAll();
+            DOTween.Clear(true);
+            DOTween.ClearCachedTweens();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning($"销毁时清理DOTween出现异常: {e.Message}");
+        }
         
         // 清理持久的音频监听器
         if (persistentAudioListener != null)

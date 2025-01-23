@@ -178,10 +178,19 @@ namespace Bubble
         public bool isDestorying = false;
         public bool isBlending = false;
         private bool isReadyToShoot = true; // 添加标记来判断是否处于待发射状态
+        private AudioSource audioSource;
 
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            
+            // 初始化音频源
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+                audioSource.playOnAwake = false;
+            }
             
             // 优化物理设置
             if (_rigidbody2D != null)
@@ -358,8 +367,15 @@ namespace Bubble
         //修改Blend方法
         private void Blend(BubbleEntity bubbleEntity)
         {
-            if (bubbleEntity == this && isBlending)  // 修改判断条件
+            if (bubbleEntity == this && isBlending)
             {
+                // 播放融合音效
+                BubbleShooter shooter = FindObjectOfType<BubbleShooter>();
+                if (shooter != null && shooter.blendSound != null)
+                {
+                    shooter.PlayBlendSound();  // 使用BubbleShooter的方法播放音效
+                }
+
                 Debug.Log($"Blending: Creating new bubble of type {_bubbleType}");
                 Vector3 position = transform.position;
                 
@@ -390,9 +406,20 @@ namespace Bubble
                 isDestorying = true;
                 int num;
                 
-                // 立即开始消除
+                // 先进行消除操作，获取num值
                 AdjoinBubbleDic.EliminateByType(bubbleEntity.GetBubbleType(), out num);
                 Debug.Log($"消除了{num}个{bubbleEntity.GetBubbleType()}泡泡");
+                
+                // 在获取到num值后再播放音效，但只由触发消除的泡泡播放一次音效
+                if (num >= 3)  // 确保有足够的泡泡被消除
+                {
+                    // 使用BubbleShooter上的AudioSource播放音效，因为它不会被销毁
+                    BubbleShooter shooter = FindObjectOfType<BubbleShooter>();
+                    if (shooter != null && shooter.eliminateSound != null)
+                    {
+                        shooter.PlayEliminateSound();  // 使用新方法播放音效
+                    }
+                }
                 
                 // 只有在实际消除了泡泡时才销毁自己
                 if (num > 0)

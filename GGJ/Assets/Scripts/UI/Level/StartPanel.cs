@@ -41,6 +41,13 @@ public class StartPanel : BasePanel
     protected override void Awake()
     {
         base.Awake();
+        
+        // 确保SoundEffectsManager存在
+        if (SoundEffectsManager.Instance != null)
+        {
+            Debug.Log("SoundEffectsManager initialized in StartPanel");
+        }
+        
         // 获取组件引用
         startBtn = transform.Find("StartBtn").GetComponent<Button>();
         exitBtn = transform.Find("ExitBtn").GetComponent<Button>();
@@ -101,29 +108,60 @@ public class StartPanel : BasePanel
     private void RegisterButtonEvents()
     {
         // 开始按钮
-        UIManager.AddCustomEventListener(startBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(startBtn));
+        UIManager.AddCustomEventListener(startBtn, EventTriggerType.PointerEnter, (data) => {
+            OnPointerEnter(startBtn);
+            SoundEffectsManager.Instance.PlayHoverSound();
+        });
         UIManager.AddCustomEventListener(startBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(startBtn));
-        startBtn.onClick.AddListener(OnStartGame);
+        // 移除PointerClick事件，只使用onClick
+        startBtn.onClick.AddListener(() => {
+            SoundEffectsManager.Instance.PlayClickSound();
+            OnStartGame();
+        });
 
         // 退出按钮
-        UIManager.AddCustomEventListener(exitBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(exitBtn));
+        UIManager.AddCustomEventListener(exitBtn, EventTriggerType.PointerEnter, (data) => {
+            OnPointerEnter(exitBtn);
+            SoundEffectsManager.Instance.PlayHoverSound();
+        });
         UIManager.AddCustomEventListener(exitBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(exitBtn));
-        exitBtn.onClick.AddListener(OnExitGame);
+        exitBtn.onClick.AddListener(() => {
+            SoundEffectsManager.Instance.PlayClickSound();
+            OnExitGame();
+        });
 
         // 制作人员按钮
-        UIManager.AddCustomEventListener(creditsBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(creditsBtn));
+        UIManager.AddCustomEventListener(creditsBtn, EventTriggerType.PointerEnter, (data) => {
+            OnPointerEnter(creditsBtn);
+            SoundEffectsManager.Instance.PlayHoverSound();
+        });
         UIManager.AddCustomEventListener(creditsBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(creditsBtn));
-        creditsBtn.onClick.AddListener(OnShowCredits);
+        creditsBtn.onClick.AddListener(() => {
+            SoundEffectsManager.Instance.PlayClickSound();
+            OnShowCredits();
+        });
 
         // 继续游戏按钮
-        UIManager.AddCustomEventListener(loadBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(loadBtn));
+        UIManager.AddCustomEventListener(loadBtn, EventTriggerType.PointerEnter, (data) => {
+            OnPointerEnter(loadBtn);
+            SoundEffectsManager.Instance.PlayHoverSound();
+        });
         UIManager.AddCustomEventListener(loadBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(loadBtn));
-        loadBtn.onClick.AddListener(OnShowLoad);
+        loadBtn.onClick.AddListener(() => {
+            SoundEffectsManager.Instance.PlayClickSound();
+            OnShowLoad();
+        });
 
         // 游戏设置按钮
-        UIManager.AddCustomEventListener(settingBtn, EventTriggerType.PointerEnter, (data) => OnPointerEnter(settingBtn));
+        UIManager.AddCustomEventListener(settingBtn, EventTriggerType.PointerEnter, (data) => {
+            OnPointerEnter(settingBtn);
+            SoundEffectsManager.Instance.PlayHoverSound();
+        });
         UIManager.AddCustomEventListener(settingBtn, EventTriggerType.PointerExit, (data) => OnPointerExit(settingBtn));
-        settingBtn.onClick.AddListener(OnShowSetting);
+        settingBtn.onClick.AddListener(() => {
+            SoundEffectsManager.Instance.PlayClickSound();
+            OnShowSetting();
+        });
     }
 
     // 鼠标悬停效果
@@ -186,13 +224,33 @@ public class StartPanel : BasePanel
         if (closeBtn1 == null)
         {
             closeBtn1 = creditsPanel.transform.Find("CloseBtn1").GetComponent<Button>();
-            if (closeBtn1 == null)
+            if (closeBtn1 != null)
             {
-                Debug.LogError("Could not find CloseBtn1!");
-                return;
+                closeBtn1.onClick.RemoveAllListeners();
+                closeBtn1.onClick.AddListener(() => {
+                    SoundEffectsManager.Instance.PlayClickSound();
+                    OnCloseCredits();
+                });
+                
+                EventTrigger trigger = closeBtn1.gameObject.GetComponent<EventTrigger>();
+                if (trigger == null) trigger = closeBtn1.gameObject.AddComponent<EventTrigger>();
+                trigger.triggers.Clear();
+                
+                // 添加悬停音效和缩放效果
+                EventTrigger.Entry enterEntry = new EventTrigger.Entry();
+                enterEntry.eventID = EventTriggerType.PointerEnter;
+                enterEntry.callback.AddListener((data) => {
+                    SoundEffectsManager.Instance.PlayHoverSound();
+                    OnPointerEnter(closeBtn1);
+                });
+                trigger.triggers.Add(enterEntry);
+
+                // 添加离开效果
+                EventTrigger.Entry exitEntry = new EventTrigger.Entry();
+                exitEntry.eventID = EventTriggerType.PointerExit;
+                exitEntry.callback.AddListener((data) => OnPointerExit(closeBtn1));
+                trigger.triggers.Add(exitEntry);
             }
-            closeBtn1.onClick.RemoveAllListeners();
-            closeBtn1.onClick.AddListener(OnCloseCredits);
         }
     }
 
@@ -228,8 +286,22 @@ public class StartPanel : BasePanel
         if (closeBtn2 == null)
         {
             closeBtn2 = loadPanel.transform.Find("CloseBtn2").GetComponent<Button>();
-            closeBtn2.onClick.RemoveAllListeners();
-            closeBtn2.onClick.AddListener(OnCloseLoad);
+            if (closeBtn2 != null)
+            {
+                closeBtn2.onClick.RemoveAllListeners();
+                closeBtn2.onClick.AddListener(() => {
+                    SoundEffectsManager.Instance.PlayClickSound();
+                    OnCloseLoad();
+                });
+                
+                EventTrigger trigger = closeBtn2.gameObject.GetComponent<EventTrigger>();
+                if (trigger == null) trigger = closeBtn2.gameObject.AddComponent<EventTrigger>();
+                
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerEnter;
+                entry.callback.AddListener((data) => SoundEffectsManager.Instance.PlayHoverSound());
+                trigger.triggers.Add(entry);
+            }
         }
     }
     // 关闭操作说明界面
@@ -263,8 +335,22 @@ public class StartPanel : BasePanel
         if (closeBtn3 == null)
         {
             closeBtn3 = settingPanel.transform.Find("CloseBtn3").GetComponent<Button>();
-            closeBtn3.onClick.RemoveAllListeners();
-            closeBtn3.onClick.AddListener(OnCloseSetting);
+            if (closeBtn3 != null)
+            {
+                closeBtn3.onClick.RemoveAllListeners();
+                closeBtn3.onClick.AddListener(() => {
+                    SoundEffectsManager.Instance.PlayClickSound();
+                    OnCloseSetting();
+                });
+                
+                EventTrigger trigger = closeBtn3.gameObject.GetComponent<EventTrigger>();
+                if (trigger == null) trigger = closeBtn3.gameObject.AddComponent<EventTrigger>();
+                
+                EventTrigger.Entry entry = new EventTrigger.Entry();
+                entry.eventID = EventTriggerType.PointerEnter;
+                entry.callback.AddListener((data) => SoundEffectsManager.Instance.PlayHoverSound());
+                trigger.triggers.Add(entry);
+            }
         }
     }
     // 关闭游戏设置界面
@@ -316,8 +402,70 @@ public class StartPanel : BasePanel
         Register();
     }
 
+    // 添加清理事件监听的方法
+    private void ClearButtonEvents()
+    {
+        if (startBtn != null)
+        {
+            EventTrigger startTrigger = startBtn.GetComponent<EventTrigger>();
+            if (startTrigger != null) startTrigger.triggers.Clear();
+            startBtn.onClick.RemoveAllListeners();
+        }
+
+        if (exitBtn != null)
+        {
+            EventTrigger exitTrigger = exitBtn.GetComponent<EventTrigger>();
+            if (exitTrigger != null) exitTrigger.triggers.Clear();
+            exitBtn.onClick.RemoveAllListeners();
+        }
+
+        if (creditsBtn != null)
+        {
+            EventTrigger creditsTrigger = creditsBtn.GetComponent<EventTrigger>();
+            if (creditsTrigger != null) creditsTrigger.triggers.Clear();
+            creditsBtn.onClick.RemoveAllListeners();
+        }
+
+        if (loadBtn != null)
+        {
+            EventTrigger loadTrigger = loadBtn.GetComponent<EventTrigger>();
+            if (loadTrigger != null) loadTrigger.triggers.Clear();
+            loadBtn.onClick.RemoveAllListeners();
+        }
+
+        if (settingBtn != null)
+        {
+            EventTrigger settingTrigger = settingBtn.GetComponent<EventTrigger>();
+            if (settingTrigger != null) settingTrigger.triggers.Clear();
+            settingBtn.onClick.RemoveAllListeners();
+        }
+
+        // 清理关闭按钮的事件
+        if (closeBtn1 != null)
+        {
+            EventTrigger closeTrigger1 = closeBtn1.GetComponent<EventTrigger>();
+            if (closeTrigger1 != null) closeTrigger1.triggers.Clear();
+            closeBtn1.onClick.RemoveAllListeners();
+        }
+
+        if (closeBtn2 != null)
+        {
+            EventTrigger closeTrigger2 = closeBtn2.GetComponent<EventTrigger>();
+            if (closeTrigger2 != null) closeTrigger2.triggers.Clear();
+            closeBtn2.onClick.RemoveAllListeners();
+        }
+
+        if (closeBtn3 != null)
+        {
+            EventTrigger closeTrigger3 = closeBtn3.GetComponent<EventTrigger>();
+            if (closeTrigger3 != null) closeTrigger3.triggers.Clear();
+            closeBtn3.onClick.RemoveAllListeners();
+        }
+    }
+
     private void OnDisable()
     {
+        ClearButtonEvents();
         // 清理所有动画
         DOTween.KillAll();
         DOTween.Clear();
@@ -325,14 +473,8 @@ public class StartPanel : BasePanel
 
     private void OnDestroy()
     {
+        ClearButtonEvents();
         UnRegister();
-        
-        // 移除所有按钮事件监听
-        if (startBtn != null) startBtn.onClick.RemoveAllListeners();
-        if (exitBtn != null) exitBtn.onClick.RemoveAllListeners();
-        if (creditsBtn != null) creditsBtn.onClick.RemoveAllListeners();
-        if (loadBtn != null) loadBtn.onClick.RemoveAllListeners();
-        if (settingBtn != null) settingBtn.onClick.RemoveAllListeners();
     }
 
     // 修改安全退出方法

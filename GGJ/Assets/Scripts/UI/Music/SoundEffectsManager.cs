@@ -3,63 +3,69 @@ using UnityEngine;
 public class SoundEffectsManager : MonoBehaviour
 {
     private static SoundEffectsManager instance;
-    private AudioSource audioSource;
-    public AudioClip hoverSound; // 悬停音效
-    public AudioClip clickSound; // 点击音效
-
     public static SoundEffectsManager Instance
     {
-        get { return instance; }
+        get
+        {
+            if (instance == null)
+            {
+                // 如果实例不存在，先尝试在场景中查找
+                instance = FindObjectOfType<SoundEffectsManager>();
+                
+                // 如果场景中没有，则创建一个新的
+                if (instance == null)
+                {
+                    GameObject go = new GameObject("SoundEffectsManager");
+                    instance = go.AddComponent<SoundEffectsManager>();
+                }
+            }
+            return instance;
+        }
     }
+
+    public AudioClip hoverSound; // 悬停音效
+    public AudioClip clickSound; // 点击音效
+    private AudioSource audioSource;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            
-            // 确保获取并启用 AudioSource
-            audioSource = GetComponent<AudioSource>();
-            if (audioSource == null)
-            {
-                audioSource = gameObject.AddComponent<AudioSource>();
-            }
-            audioSource.enabled = true;
-        }
-        else
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+        
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        InitializeAudioSource();
+    }
+
+    private void InitializeAudioSource()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.playOnAwake = false;
     }
 
     public void PlayHoverSound()
     {
-        PlaySound(hoverSound);
+        if (hoverSound != null && audioSource != null)
+        {
+            audioSource.volume = 0.5f; // 调整音量到合适的大小
+            audioSource.PlayOneShot(hoverSound);
+        }
     }
 
     public void PlayClickSound()
     {
-        if (clickSound != null)
+        if (clickSound != null && audioSource != null)
         {
-            // 确保 AudioSource 是启用的
-            if (!audioSource.enabled)
-            {
-                audioSource.enabled = true;
-            }
-            PlaySound(clickSound);
-        }
-    }
-
-    public void PlaySound(AudioClip clip)
-    {
-        if (clip != null && audioSource != null && audioSource.enabled)
-        {
-            audioSource.PlayOneShot(clip);
-        }
-        else
-        {
-            Debug.LogWarning("Failed to play sound: AudioSource is not ready or clip is null");
+            audioSource.volume = 0.5f; // 调整音量到合适的大小
+            audioSource.PlayOneShot(clickSound);
         }
     }
 

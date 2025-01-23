@@ -31,8 +31,22 @@ namespace Bubble
 
         public Transform shooterAway; // 添加 ShooterAway 的引用
 
+        [Header("音效设置")]
+        public AudioClip shootSound;      // 发射音效
+        public AudioClip blendSound;      // 融合音效
+        public AudioClip eliminateSound;  // 消除音效
+        private AudioSource audioSource;   // 音频源组件
+
         private void Awake()
         {
+            // 初始化音频源
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+                audioSource.playOnAwake = false;
+            }
+
             //资源加载之后修改
             /*ResManager.GetInstance().LoadAsync<GameObject>("Bubble/" + name, shooter =>
             {
@@ -197,6 +211,12 @@ namespace Bubble
             
             _canShoot = false;
             
+            // 播放发射音效
+            if (shootSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(shootSound);
+            }
+            
             // 发射前将泡泡设为 ShooterAway 的子物体
             if (shooterAway != null)
             {
@@ -243,6 +263,23 @@ namespace Bubble
         private void OnDestroy()
         {
             UnRegister();
+        }
+
+        // 添加公共方法来播放音效
+        public void PlayEliminateSound()
+        {
+            if (eliminateSound != null && audioSource != null && audioSource.enabled)
+            {
+                audioSource.PlayOneShot(eliminateSound, 0.7f);  // 可以调整音量
+            }
+        }
+
+        public void PlayBlendSound()
+        {
+            if (blendSound != null && audioSource != null && audioSource.enabled)
+            {
+                audioSource.PlayOneShot(blendSound, 0.7f);
+            }
         }
     }
 

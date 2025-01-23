@@ -854,6 +854,9 @@ MonoBehaviour:
   plusNum: 0
   bubbleRod: {fileID: 0}
   shooterAway: {fileID: 4447594673208369029}
+  shootSound: {fileID: 8300000, guid: c946dd7885208ca4788775a998a8796c, type: 3}
+  blendSound: {fileID: 8300000, guid: f19c5f196471aae4e98f57f3d86face6, type: 3}
+  eliminateSound: {fileID: 8300000, guid: f19c5f196471aae4e98f57f3d86face6, type: 3}
 --- !u!1 &6117841060568867527
 GameObject:
   m_ObjectHideFlags: 0
