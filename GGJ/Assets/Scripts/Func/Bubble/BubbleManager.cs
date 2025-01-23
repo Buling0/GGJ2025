@@ -10,6 +10,10 @@ namespace Bubble
 {
     public class BubbleManager : BaseManager<BubbleManager>
     {
+        // 添加泡泡预制体引用
+        [SerializeField] private GameObject bubblePrefab;
+        private Dictionary<BubbleType, GameObject> _bubblePrefabs = new Dictionary<BubbleType, GameObject>();
+
         public void CreatBubbleByType(BubbleType bt, Transform root, UnityAction<BubbleEntity> callback)
         {
             //20250121
@@ -47,33 +51,56 @@ namespace Bubble
             });
         }
         
-        public void  CreateBubbleByBlend(BubbleType bt, Transform root, Vector3 v)
+        public BubbleEntity CreateBubbleByBlend(BubbleType bubbleType, Transform parent, Vector3 position)
         {
-            BubbleEntity be = null;
-            
-            ResManager.GetInstance().LoadAsync<GameObject>("BubblePrefabs/" + bt.ToString(), (obj) =>
+            BubbleEntity bubble = null;
+            ResManager.GetInstance().LoadAsync<GameObject>("BubblePrefabs/" + bubbleType.ToString(), (obj) =>
             {
-                be = obj.GetComponent<BubbleEntity>();
-                
-                obj.transform.SetParent(root);
-                obj.transform.position = v;
+                if (obj != null)
+                {
+                    // 直接使用加载的对象，不需要再次Instantiate
+                    obj.transform.SetParent(parent);
+                    obj.transform.position = position;
+                    
+                    bubble = obj.GetComponent<BubbleEntity>();
+                    if (bubble != null)
+                    {
+                        // 设置物理属性
+                        Rigidbody2D rb = bubble.GetComponent<Rigidbody2D>();
+                        if (rb != null)
+                        {
+                            rb.simulated = true;
+                            rb.gravityScale = -1;
+                            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+                            rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
+                            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+                        }
+                        
+                        // 触发相应的混合完成事件
+                        switch (bubbleType)
+                        {
+                            case BubbleType.Green:
+                                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Blue);
+                                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Yellow);
+                                break;
+                            case BubbleType.Orange:
+                                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Red);
+                                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Yellow);
+                                break;
+                            case BubbleType.Purple:
+                                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Blue);
+                                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Red);
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.LogError($"Failed to load bubble prefab for type: {bubbleType}");
+                }
             });
-
-            switch (bt)
-            {
-                case BubbleType.Green:
-                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Blue);
-                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Yellow);
-                    break;
-                case BubbleType.Orange:
-                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Red);
-                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Yellow);
-                    break;
-                case BubbleType.Purple:
-                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Blue);
-                    EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", BubbleType.Red);
-                    break;
-            }
+            
+            return bubble;
         }
 
         public void DestoryBubbleList(List<BubbleEntity> bubbles)

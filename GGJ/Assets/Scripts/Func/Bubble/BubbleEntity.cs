@@ -248,10 +248,21 @@ namespace Bubble
             // 添加到相邻泡泡字典
             AdjoinBubbleDic.Add(bubbleEntity);
             
-            // 检查是否可以消除（三消）
+            // 先检查是否可以混合颜色
+            bool canBlend;
+            CheckCanBlend(bubbleEntity, out canBlend);
+            if (canBlend)
+            {
+                isBlending = true;
+                bubbleEntity.isBlending = true;
+                // 触发混合事件
+                EventManager.GetInstance().EventTrigger<BubbleEntity>("Blend", this);
+                return;
+            }
+            
+            // 如果不能混合，再检查是否可以消除
             if (CheckCanEliminate())
             {
-                // 立即触发消除
                 EventManager.GetInstance().EventTrigger<BubbleEntity>("Eliminate", this);
                 return;
             }
@@ -274,18 +285,24 @@ namespace Bubble
             AdjoinBubbleDic.Remove(bubbleEntity);
         }
 
-        //颜色合成检测
+        //修改颜色混合检测逻辑
         private void CheckCanBlend(BubbleEntity bubbleEntity, out bool canBlend)
         {
             canBlend = false;
             BubbleType bt = bubbleEntity.GetBubbleType();
+            
+            // 如果是白色或相同颜色，不进行混合
             if (_bubbleType == BubbleType.White || bt == _bubbleType || bt == BubbleType.White)
             {
                 return;
             }
 
-            //混合的泡泡和发射器生成的泡泡不一样
-            //应该是在原地合并，不需要发射
+            // 如果已经是混合色，不再进行混合
+            if (_bubbleType == BubbleType.Green || _bubbleType == BubbleType.Purple || _bubbleType == BubbleType.Orange)
+            {
+                return;
+            }
+
             switch (_bubbleType)
             {
                 case BubbleType.Blue:
@@ -299,7 +316,6 @@ namespace Bubble
                         canBlend = true;
                         _bubbleType = BubbleType.Green;
                     }
-
                     break;
                 case BubbleType.Red:
                     if (bt == BubbleType.Blue)
@@ -312,7 +328,6 @@ namespace Bubble
                         canBlend = true;
                         _bubbleType = BubbleType.Orange;
                     }
-
                     break;
                 case BubbleType.Yellow:
                     if (bt == BubbleType.Red)
@@ -325,11 +340,7 @@ namespace Bubble
                         canBlend = true;
                         _bubbleType = BubbleType.Green;
                     }
-
                     break;
-                default:
-                    canBlend = false;
-                    return;
             }
         }
 
@@ -344,20 +355,30 @@ namespace Bubble
             return false;
         }
 
-        //进行颜色混合
+        //修改Blend方法
         private void Blend(BubbleEntity bubbleEntity)
         {
-            if (bubbleEntity != this && isBlending)
+            if (bubbleEntity == this && isBlending)  // 修改判断条件
             {
-                if (_bubbleType == BubbleType.Green || _bubbleType == BubbleType.Purple ||
-                    _bubbleType == BubbleType.Orange)
+                Debug.Log($"Blending: Creating new bubble of type {_bubbleType}");
+                Vector3 position = transform.position;
+                
+                // 创建新的混合泡泡
+                BubbleEntity newBubble = BubbleManager.GetInstance().CreateBubbleByBlend(_bubbleType, transform.parent, position);
+                
+                // 确保新泡泡具有物理属性
+                if (newBubble != null)
                 {
-                    Debug.Log("Blend");
-                    Transform p1 = bubbleEntity.gameObject.transform;
-                    Transform p2 = this.gameObject.transform;
-                    Vector3 posi = (p1.position + p2.position) / 2;
-                    BubbleManager.GetInstance().CreateBubbleByBlend(_bubbleType, p1.parent, posi);
+                    Rigidbody2D rb = newBubble.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.simulated = true;
+                        rb.gravityScale = -1; // 与发射的泡泡使用相同的重力设置
+                    }
                 }
+                
+                // 触发混合完成事件
+                EventManager.GetInstance().EventTrigger<BubbleType>("BlendDone", _bubbleType);
             }
         }
 
