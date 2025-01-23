@@ -19,16 +19,17 @@ namespace Bubble
         public float curAngle = 0;
         private Ray _ray;
 
-        public Transform tran1;
-        public Transform tran2;
+        public Transform tran1;  // 当前泡泡的位置
+        public Transform tran2;  // 下一个泡泡的位置
         private BubbleEntity _curBubbleEntity;
         private BubbleEntity _nextBubbleEntity;
         public int plusNum = 0;
 
-        public Transform bubbleRod; // 泡泡杆的Transform引用
-        public Transform shooterRoot; // ShooterRoot的Transform引用
+        public Transform bubbleRod;
 
         private bool _canShoot = true; // 添加发射状态标记 20250121
+
+        public Transform shooterAway; // 添加 ShooterAway 的引用
 
         private void Awake()
         {
@@ -144,10 +145,7 @@ namespace Bubble
 
         private void RotateDir()
         {
-            // 计算新的角度
             float newAngle = curAngle + _isRotateRight * rotateSpeed * Time.deltaTime * 0.1f;
-            
-            // 限制角度范围在-1.5到1.5之间
             curAngle = Mathf.Clamp(newAngle, -1.5f, 1.5f);
 
             Vector2 v = _dir;
@@ -163,11 +161,22 @@ namespace Bubble
             
             // 确保泡泡杆的位置与射线的起点一致
             bubbleRod.position = _ray.origin;
-            
-            // 更新ShooterRoot的位置
-            if (shooterRoot != null)
+
+            // 让 tran1 跟随射线旋转，但不旋转泡泡本身
+            if (tran1 != null)
             {
-                shooterRoot.position = _ray.origin;
+                // 移动 tran1 的位置，但保持泡泡朝向不变
+                float offset = 130f;
+                tran1.position = _ray.origin + (Vector3)(_dir.normalized * offset);
+                
+                // 设置 tran1 的旋转为 0，防止泡泡翻转
+                tran1.rotation = Quaternion.identity;
+                
+                // 如果当前有泡泡，确保其保持正确朝向
+                if (_curBubbleEntity != null)
+                {
+                    _curBubbleEntity.transform.rotation = Quaternion.identity;
+                }
             }
         }
 
@@ -186,26 +195,34 @@ namespace Bubble
         {
             if (!_canShoot || _curBubbleEntity == null) return;
             
-            _canShoot = false; // 发射后禁止连续发射 20250121
+            _canShoot = false;
+            
+            // 发射前将泡泡设为 ShooterAway 的子物体
+            if (shooterAway != null)
+            {
+                _curBubbleEntity.transform.SetParent(shooterAway);
+                // 确保发射时泡泡朝向正确
+                _curBubbleEntity.transform.rotation = Quaternion.identity;
+            }
+            
             _curBubbleEntity.AddForce(_dir, force);
             Invoke("FillNextBubble", 0.6f);
         }
 
         private void FillNextBubble()
         {
-            if (_nextBubbleEntity == null) return; //20250121
+            if (_nextBubbleEntity == null) return;
             
             _curBubbleEntity = _nextBubbleEntity;
             _curBubbleEntity.transform.SetParent(tran1);
             _curBubbleEntity.transform.localPosition = Vector3.zero;
             
-            // 创建下一个泡泡 20250121
             BubbleManager.GetInstance().CreatBubbleByType(
                 ShooterManager.GetInstance().nextType(), 
                 tran2,
                 obj => { 
                     _nextBubbleEntity = obj;
-                    _canShoot = true; // 新泡泡准备好后才允许发射
+                    _canShoot = true;
                 }
             );
 

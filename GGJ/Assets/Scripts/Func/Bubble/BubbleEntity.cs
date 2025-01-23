@@ -115,6 +115,7 @@ namespace Bubble
         {
             if (!Dic.ContainsKey(bubbleType))
             {
+                //isBeLiminate = true;
                 return null;
             }
             
@@ -129,6 +130,7 @@ namespace Bubble
                 }
             }
             
+            //isBeLiminate = true;
             return list;
         }
 
