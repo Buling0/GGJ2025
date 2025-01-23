@@ -4103,9 +4103,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5343\u79A7\u6CE1\u6CE1\u68A6\u5C0F\u961F\n\n\n\u7B56\u5212 & \u97F3\u4E50
-    : \u5976\u6CB9\u8FA3\u571F\u8C46\n\n\n\u7A0B\u5E8F : \u4E0D\u7075 \u6708\u521D\n\n\n\u7F8E\u672F
-    : \u773C\u9C7C \u67AF\u6851 \u989C\u6E0A\n\n"
+  m_text: "\u5343\u79A7\u6CE1\u6CE1\u68A6\u5C0F\u961F\n\n\u7B56\u5212 : \u5976\u6CB9\u8FA3\u571F\u8C46\n\n\u7A0B\u5E8F
+    : \u4E0D\u7075 \u6708\u521D\n\n\u7F8E\u672F : \u773C\u9C7C \u67AF\u6851 \u989C\u6E0A\n\n\u97F3\u4E50
+    : \u611F\u8C22Freesound\u521B\u4F5C\u8005\u7684\u5206\u4EAB\r\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21fcac0427388e841a97458d2a278f09, type: 2}
   m_sharedMaterial: {fileID: -3507834054254466635, guid: 21fcac0427388e841a97458d2a278f09, type: 2}
