@@ -74,14 +74,33 @@ namespace Bubble
 
         public void DestoryBubbleList(List<BubbleEntity> bubbles)
         {
+            if (bubbles == null || bubbles.Count == 0) return;
+            
             BubbleType bt = bubbles[0].GetBubbleType();
-            int i = bubbles.Count - 1;
-            for ( ; i >= 0; i--)
-            {
-                bubbles[i].DestorySelf();
-            }
+            
+            // 使用协程批量处理销毁
+            MonoManager.GetInstance().StartCoroutine(BatchDestroy(bubbles));
             
             EventManager.GetInstance().EventTrigger<BubbleType>("EliminateDone", bt);
+        }
+
+        private IEnumerator BatchDestroy(List<BubbleEntity> bubbles)
+        {
+            const int batchSize = 4;  // 每帧处理4个泡泡
+            // 可以调整为：
+            // const int batchSize = 2;  // 每帧处理更少，更平滑但更慢
+            // const int batchSize = 5;  // 每帧处理更多，更快但可能不够平滑
+            for (int i = 0; i < bubbles.Count; i += batchSize)
+            {
+                for (int j = 0; j < batchSize && i + j < bubbles.Count; j++)
+                {
+                    if (bubbles[i + j] != null)
+                    {
+                        bubbles[i + j].DestorySelf();
+                    }
+                }
+                yield return null;  // 等待下一帧
+            }
             
             GCManager.GetInstance().StartGC();
         }

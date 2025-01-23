@@ -72,25 +72,43 @@ namespace Bubble
             }
 
             List<BubbleEntity> list = Dic[bubbleType];
-            int i = Dic[bubbleType].Count - 1;
-            for (; i >= 0; i--)
+            
+            // 如果数量不足3个，不进行消除
+            if (list.Count < 2)  // 加上触发消除的泡泡共3个
             {
-                var be = list[i];
-                be.isDestorying = true;
-                IEnumerable<BubbleEntity> l = list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
-                foreach (var bubble in l)
+                num = 0;
+                return;
+            }
+
+            // 获取所有相连的相同类型泡泡
+            List<BubbleEntity> allConnectedBubbles = new List<BubbleEntity>(list);
+            
+            // 确保包含触发消除的泡泡
+            foreach (var bubble in list)
+            {
+                if (bubble != null)
                 {
-                    if (!list.Contains(bubble))
+                    var connectedBubbles = bubble.AdjoinBubbleDic.BeEliminate(bubbleType);
+                    if (connectedBubbles != null)
                     {
-                        list.Add(bubble);
+                        foreach (var connectedBubble in connectedBubbles)
+                        {
+                            if (!allConnectedBubbles.Contains(connectedBubble))
+                            {
+                                allConnectedBubbles.Add(connectedBubble);
+                            }
+                        }
                     }
                 }
             }
 
-            num = list.Count;
-
+            num = allConnectedBubbles.Count;
+            
+            // 触发分数计算
             ScoreManager.GetInstance().PlusScore(bubbleType, num);
-            BubbleManager.GetInstance().DestoryBubbleList(list);
+            
+            // 销毁所有匹配的泡泡
+            BubbleManager.GetInstance().DestoryBubbleList(allConnectedBubbles);
         }
 
         public List<BubbleEntity> BeEliminate(BubbleType bubbleType)
@@ -100,35 +118,20 @@ namespace Bubble
                 isBeLiminate = true;
                 return null;
             }
-            else if (Dic[bubbleType].Count <= 1 || isBeLiminate)
+            
+            List<BubbleEntity> list = Dic[bubbleType];
+            
+            // 确保所有相同类型的泡泡都被标记为待销毁
+            foreach (var bubble in list)
             {
-                return Dic[bubbleType];
-            }
-            else
-            {
-                List<BubbleEntity> list = Dic[bubbleType];
-                int i = Dic[bubbleType].Count - 1;
-                for (; i >= 0; i--)
+                if (bubble != null && !bubble.isDestorying)
                 {
-                    var be = list[i];
-                    if (!be.isDestorying)
-                    {
-                        be.isDestorying = true;
-                        IEnumerable<BubbleEntity> l = list.Union(be.AdjoinBubbleDic.BeEliminate(bubbleType));
-                        foreach (var bubble in l)
-                        {
-                            if (!list.Contains(bubble))
-                            {
-                                list.Add(bubble);
-                            }
-                        }
-                    }
+                    bubble.isDestorying = true;
                 }
-
-                isBeLiminate = true;
-
-                return list;
             }
+            
+            isBeLiminate = true;
+            return list;
         }
 
         public void Remove(BubbleEntity bubbleEntity)
@@ -178,6 +181,19 @@ namespace Bubble
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
+            
+            // 优化物理设置
+            if (_rigidbody2D != null)
+            {
+                _rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+                _rigidbody2D.sleepMode = RigidbodySleepMode2D.NeverSleep;  // 防止休眠
+                _rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;  // 添加插值
+                // 可以改为以下三种之一：
+                // _rigidbody2D.interpolation = RigidbodyInterpolation2D.None;  // 无插值，可能会有跳跃感
+                // _rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;  // 普通插值，平滑度适中
+                // _rigidbody2D.interpolation = RigidbodyInterpolation2D.Extrapolate;  // 外推插值，最平滑但可能有预测误差
+            }
+            
             Register();
         }
 
@@ -205,32 +221,19 @@ namespace Bubble
         //碰撞开始 把碰撞物体加入字典
         private void OnCollisionEnter2D(Collision2D bubble)
         {
-            if (bubble == null)
-            {
-                return;
-            }
+            if (bubble == null) return;
 
             BubbleEntity bubbleEntity = bubble.gameObject.GetComponent<BubbleEntity>();
-            if (bubbleEntity == null)
-            {
-                return;
-            }
+            if (bubbleEntity == null) return;
 
-            bool canBlend;
-            CheckCanBlend(bubbleEntity, out canBlend);
-            if (canBlend && !isBlending)
-            {
-                Debug.Log("blend");
-                isBlending = true;
-                bubbleEntity.isBlending = true;
-                EventManager.GetInstance().EventTrigger<BubbleEntity>("Blend", bubbleEntity);
-                return;
-            }
-
+            // 添加到相邻泡泡字典
             AdjoinBubbleDic.Add(bubbleEntity);
+            
+            // 检查是否可以消除（三消）
             if (CheckCanEliminate())
             {
-                EventManager.GetInstance().EventTrigger<BubbleEntity>("Eliminate", bubbleEntity);
+                // 立即触发消除
+                EventManager.GetInstance().EventTrigger<BubbleEntity>("Eliminate", this);
                 return;
             }
         }
@@ -311,14 +314,14 @@ namespace Bubble
             }
         }
 
-        //消除检测
+        //修改消除检测逻辑
         private bool CheckCanEliminate()
         {
-            if (AdjoinBubbleDic.CheckTypeNum(_bubbleType) >= 2)
+            // 检查相同颜色的泡泡数量是否达到3个
+            if (AdjoinBubbleDic.CheckTypeNum(_bubbleType) >= 2)  // 已经有2个相邻，加上自己就是3个
             {
                 return true;
             }
-
             return false;
         }
 
@@ -339,23 +342,27 @@ namespace Bubble
             }
         }
 
-        //进行消除
+        //修改消除逻辑，加快处理速度
         public void Eliminate(BubbleEntity bubbleEntity)
         {
             if (bubbleEntity == this && !isDestorying)
             {
                 isDestorying = true;
                 int num;
+                
+                // 立即开始消除
                 AdjoinBubbleDic.EliminateByType(bubbleEntity.GetBubbleType(), out num);
                 Debug.Log($"消除了{num}个{bubbleEntity.GetBubbleType()}泡泡");
                 
-                if (num == 0)
+                // 只有在实际消除了泡泡时才销毁自己
+                if (num > 0)
+                {
+                    DestorySelf();
+                }
+                else
                 {
                     isDestorying = false;
-                    return;
                 }
-
-                DestorySelf();
             }
         }
 
@@ -378,15 +385,24 @@ namespace Bubble
 
         public void DestorySelf()
         {
-            if (gameObject == null) return;//20250121
+            if (gameObject == null) return;
             
+            // 立即禁用碰撞和物理
+            if (_rigidbody2D != null)
+            {
+                _rigidbody2D.simulated = false;
+            }
+            
+            // 立即处理销毁
             gameObject.SetActive(false);
             AdjoinBubbleDic.Clear();
             UnRegister();
             
-            // 确保在销毁前清理引用20250121
             _rigidbody2D = null;
-            Destroy(this.gameObject);
+            Destroy(gameObject, 0.005f);  // 使用较低延迟，但不是立即销毁
+            // 可以调整为：
+            //Destroy(gameObject, 0f);     // 立即销毁，可能会有一点卡顿
+            //Destroy(gameObject, 0.02f);  // 更长的延迟，更平滑但反应稍慢
         }
     }
 }
