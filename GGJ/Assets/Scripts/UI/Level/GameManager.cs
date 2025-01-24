@@ -238,8 +238,19 @@ public class GameManager : MonoBehaviour
         // 创建临时相机
         GameObject tempCam = CreateTemporaryCamera();
 
+        // 确保SceneTransitionManager已经初始化
+        yield return new WaitForEndOfFrame();
+
+        // 使用SceneTransitionManager处理场景切换效果
+        SceneTransitionManager.Instance.LoadScene(sceneName);
+
+        // 等待足够长的时间确保淡出效果完成
+        yield return new WaitForSeconds(SceneTransitionManager.Instance.fadeDuration + 0.2f);
+
         // 加载新场景
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = true;
+
         while (!asyncLoad.isDone)
         {
             yield return null;
@@ -336,32 +347,35 @@ public class GameManager : MonoBehaviour
         Resources.UnloadUnusedAssets();
         System.GC.Collect();
 
-        // 创建一个临时相机来防止场景切换时的黑屏
-        GameObject tempCam = new GameObject("TempCamera");
-        Camera cam = tempCam.AddComponent<Camera>();
-        cam.clearFlags = CameraClearFlags.SolidColor;
-        cam.backgroundColor = Color.black;
-        DontDestroyOnLoad(tempCam);
-        
-        // 使用异步加载场景
-        StartCoroutine(LoadSceneAsync(sceneName, tempCam));
+        // 使用异步加载场景，但通过SceneTransitionManager处理淡入淡出效果
+        StartCoroutine(LoadSceneAsync(sceneName));
     }
 
-    private IEnumerator LoadSceneAsync(string sceneName, GameObject tempCam)
+    private IEnumerator LoadSceneAsync(string sceneName)
     {
         // 检查场景是否存在于构建设置中
         if (!Application.CanStreamedLevelBeLoaded(sceneName))
         {
             Debug.LogError($"Scene '{sceneName}' does not exist in build settings!");
-            Destroy(tempCam);
             yield break;
         }
 
-        // 开始异步加载场景
+        // 创建一个临时相机来防止场景切换时的黑屏
+        GameObject tempCam = CreateTemporaryCamera();
+
+        // 确保SceneTransitionManager已经初始化
+        yield return new WaitForEndOfFrame();
+
+        // 使用SceneTransitionManager开始淡出效果
+        SceneTransitionManager.Instance.LoadScene(sceneName);
+
+        // 等待足够长的时间确保淡出效果完成
+        yield return new WaitForSeconds(SceneTransitionManager.Instance.fadeDuration + 0.2f);
+
+        // 加载新场景
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = true;
 
-        // 等待场景加载完成
         while (!asyncLoad.isDone)
         {
             yield return null;
@@ -371,7 +385,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         // 销毁临时相机
-        Destroy(tempCam);
+        if (tempCam != null)
+        {
+            Destroy(tempCam);
+        }
+
+        // 初始化新场景
+        InitializeNewScene();
     }
 
     private void Update()
